@@ -1,0 +1,27 @@
+Rakenduse koodirepositooriumi üles seadmine 1p
+Prototüüp 3p
+Projektiplaan 5p
+Rakenduse ülesseadmine testkeskkonda 5p
+Andmete salvestamine andmebaasi 1p
+Andmebaasi andmete esitamine (sh. JOIN lause) 1p
+Agregeeritud andmete esitamine 1p
+Leheosade hilisem laadimine 1p
+interaktiivne ehk rakendusesisene abiinfo 1p
+AJAX viited (bookmarks) 1p
+Faililaadimisevorm 1p
+Meldimise (i.k. log in) järel näidatakse lehte, millele kasutaja soovis minna (st. millele viidati) 1p
+CDN failide test: kui CDN serverile ligipääs puudub kasutatakse kohalikku faili 1p
+Automaatteavitus 1p
+Pangalingi kasutamine 3p
+Autentimine 3p
+AJAX 3p
+mitmekeelne kasutajaliides 3p
+Veebilehel sisu esitamine kaardil 3p
+Autoriseerimine (st. ainult meldinutele kättesaadav funktsionaalsus ja sisu) 3p
+Otsingumootoritele optimeerimine 3p
+Andmete surumine 3p
+Autentimine (ID-kaart või Smart ID) 6p
+Külastajate statistika kogumine 6p
+Päringute arvu ja mahu piiramine (st. veebirakenduse optimeerimine, sh. cache päiste kasutamine, Google PageSpeed?) 6p
+Automaattestid 6p
+Jõudlustestid 6p
