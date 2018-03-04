@@ -25,3 +25,4 @@ Külastajate statistika kogumine 6p
 Päringute arvu ja mahu piiramine (st. veebirakenduse optimeerimine, sh. cache päiste kasutamine, Google PageSpeed?) 6p
 Automaattestid 6p
 Jõudlustestid 6p
+Kokku ilma  boonusteta 75p
