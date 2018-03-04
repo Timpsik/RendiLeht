@@ -1,0 +1,43 @@
+Projekti eest saadavad punktid jaotuvad järgnevalt:
+
+    Kasutatud võtted - ajas kahaneva punktisummaga (vt. võtted).
+    Eritähtajalised ülesanded - kindla punktisummaga kuid tähtajaks tegemata jätmise korral kaotatakse edasiste esitatud tulemuste eest pooled punktid (sh. perioodiliselt hinnatavad). Pärast funktsionaalsuse realiseerimist saadakse edasi taas täismahus punkte. Eritähtajalisi ülesandeid hinnatakse tähtaja saabumisel - varasemates etappides neid esitada ei saa.
+    Jooksvalt ehk alates teisest etapist iga esitatud vahetulemuse puhul kontrollitavad (kokku 72 punkti):
+        (X)HTML kehtivus (2p/etapp)
+        CSS kehtivus (2p/etapp)
+        Kujundus, sisu ja loogika on eraldatud (CSS, HTML, Javascript, server-side code, andmebaas) (2p/etapp)
+        Vastavus WCAG 2.0 standardile (validaator) (NB! Kõiki nõudeid ei saa automaat kontrollida) (olenevalt tasemest kuni 2p/etapp):
+            Tase A (0,5p/etapp)
+            Tase AA (oodatav normtase) (1p/etapp)
+            Tase AAA (2p/etapp) 
+        Veebilehitsejate tugi - toetatud veebilehitsejate versioonid peaksid moodustama vähemalt 60% veebilehitsejate levikust töölaual ja mobiilsetes seadmetes (1p/etapp)
+            Pooled punktid saab kui toeatate vähemalt 2 enimlevinumast 10-st töölauaveebilehitsejate versioonist ja 1 enimlevinud 5st mobiillsete veebilehitsejate versioonist. 
+        Aknasuuruste tugi (1p/etapp)
+            Täispunktide saamiseks peab olema veebilehe kujundus dünaamiliselt kohanduv (testime ka http://browsershots.org/)
+            Pooled punktid saab kui on toetatud järgmised ekraanisuurused (8 enimlevinud ekraanisuurust veebi kasutamisek kasutatavatel seadmetel):
+                640x360
+                1366x768
+                1920x1080
+                1024x768
+                667x375
+                1440x900
+                1280x800
+                568x320 
+        Heade praktikate järgimine (3p/etapp)
+            Veebilehitseja edasi-tagasi nuppude tugi (ka Javascriptiga uuendatud lehtede korral)
+            Infoturbe heade praktikate järgimine
+                Paroole ei tohi olla koodihoidlas
+                SQL päringud on parametriseeritud
+                XSS tõrje 
+            SQL päringute head praktikad
+                Rakendus ei teosta INSERT ega UPDATE päringuid (protseduuride kasutamine andmete muutmiseks)
+                Rakendus ei teosta SELECT päringuid mittekonstantsetel tabelitel (vaadete kasutamine andmete pärimiseks) 
+            POST, GET, PUT, HEAD jt. käskude korrektne kasutamine
+            URI-de korrektne kasutamine
+            Põhifunktsionaalsus (st. kõik, mis ei ole mugavusfunktsionaalsus) töötab ka Javascriptita (käitumine võib erineda javascripti toe korral käitumisest)
+            Reaktiivsete/kohanduvate veebipraktikate järgimine
+                suhtühikute kasutamine absoluutsete asemel (st. mõõtude puhul absoluutühikuid kasutatakse vaid piltide ja muu rastergraafika juures, mujal on kasutuses suhtühikud)
+                Aknalaiusega arvestav CSS (veebilehe sisu ümber paigutamine veebilehitseja akna laiust arvestdes) 
+            Koodi dokumenteerimine 
+
+
