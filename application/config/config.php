@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = "http://localhost/";
-$config['base_url'] = "http://rendileht.epizy.com/";
+$config['base_url'] = "https://rendileht.netlify.com/";
 
 /*
 |--------------------------------------------------------------------------
