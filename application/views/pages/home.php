@@ -6,7 +6,7 @@
 <body>
 		<input id="b01" type="submit" value="Lisa kuulutus">
 		<button id="b02" onclick="location.href='<?php echo site_url('Pages/logimine');?>'">Logi sisse</button>
-		<input id="b03" type="submit" value="Registreeru">
+		<button id="b03" onclick="location.href='<?php echo site_url('Pages/regamine');?>'">Registreeru</button>
 		<h1>RENDI KÕIKE</h1>
 		<form action="/action_page.php">
 			<p id="valikategooria">Vali kategooria:	</p>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/login.css')?>"/>
+</head>
+<body>
+	<form action="/action_page.php">
+		<h3 id="mail" >E-mail:</h3> 
+		<br><br>
+		<input id="meil" type="text" name="meil" size="40">
+		<br><br>
+		<h3 id="mail" >Parool:</h3>
+		<br><br>
+		<input id="parool" type="password" name="parool" size="40">
+		<br><br>
+		<fb:login-button id="fb"
+			scope="public_profile,email"
+			onlogin="checkLoginState();">
+		</fb:login-button>
+	</form>
+</body>
+</html>
