@@ -7,8 +7,20 @@
   <link rel="stylesheet" href="&lt;?php echo base_url('assets/css/theme.css')?&gt;">
   <link rel="stylesheet" href="theme.css">
   </head>
-
 <body>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6"><select id="kategooria" name="kategooria" class="my-2">
+				<option value="Estonian">Estonian</option>
+				<option value="English">English</option>   
+			</select></div>
+        <div class="col-md-6">
+          <a class="btn btn-primary btn-sm" href="#">Tagasi avalehele</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="py-5">
     <div class="container">
       <div class="row">
@@ -138,6 +150,4 @@
       </div>
     </div>
   </div>
-</body>
-
 </html>

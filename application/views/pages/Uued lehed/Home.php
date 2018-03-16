@@ -6,17 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="&lt;?php echo base_url('assets/css/theme.css')?&gt;">
   <link rel="stylesheet" href="theme.css">
-
+</head>
 <body>
   <div class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2"> <select id="kategooria" name="kategooria" class="my-2">
+				<option value="Estonian">Estonian</option>
+				<option value="English">English</option>   
+			</select></div>
+        <div class="col-md-2">
           <a class="btn btn-primary" href="logi_sisse.html">Logi sisse</a>
         </div>
-        <div class="col-md-3"></div>
-        <div class="col-md-3"></div>
-        <div class="col-md-2 offset-md-1">
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2 ">
           <a class="btn btn-primary" href="Registreeru.html" data-target="Registreeru">Registreeru
             <br> </a>
         </div>
@@ -123,6 +127,4 @@
       </div>
     </div>
   </div>
-</body>
-
 </html>

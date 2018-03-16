@@ -12,6 +12,19 @@
   <div class="py-5">
     <div class="container">
       <div class="row">
+        <div class="col-md-6"><select id="kategooria" name="kategooria" class="my-2">
+				<option value="Estonian">Estonian</option>
+				<option value="English">English</option>   
+			</select></div>
+        <div class="col-md-6">
+          <a class="btn btn-primary btn-sm" href="#">Tagasi avalehele</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
         <div class="col-md-12">
           <div class="row">
             <div class="col-md-2">
@@ -58,8 +71,7 @@
           <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-6">
-              <input type="text" class="form-control">
-            </div>
+              <input type="text" class="form-control"> </div>
           </div>
           <div class="row">
             <div class="col-md-6 offset-md-4"> </div>
@@ -85,6 +97,4 @@
       </div>
     </div>
   </div>
-</body>
-
 </html>
