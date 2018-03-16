@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="<?php echo base_url('assets/css/theme.css')?>"/>
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/theme.css')?>">
+</head>
 
 <body>
   <div class="py-5">
@@ -36,7 +37,7 @@
       <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-          <input type="email" class="form-control" placeholder="E-mail"> </div>
+          <input type="email" class="form-control" placeholder="Pealkiri"> </div>
         <div class="col-md-4"></div>
       </div>
       <div class="row">
@@ -69,31 +70,31 @@
         <div class="col-md-1"></div>
         <div class="col-md-1"></div>
         <div class="col-md-1">
-          <p>Päev:</p>
+           <h5 class="">Tund:</h5>
         </div>
         <div class="col-md-1">
-          <input type="email" class="form-control"> </div>
+          <input type="number" class="form-control"> </div>
         <div class="col-md-1">
           <div class="col-md-12">
             <h5 class="">Päev:</h5>
           </div>
         </div>
         <div class="col-md-1">
-          <input type="email" class="form-control"> </div>
+          <input type="number" class="form-control"> </div>
         <div class="col-md-1">
           <div class="col-md-12">
             <h5 class="">Nädal</h5>
           </div>
         </div>
         <div class="col-md-1">
-          <input type="email" class="form-control"> </div>
+          <input type="number" class="form-control"> </div>
         <div class="col-md-1">
           <div class="col-md-12">
             <h5 class="">Kuu</h5>
           </div>
         </div>
         <div class="col-md-1">
-          <input type="email" class="form-control"> </div>
+          <input type="number" class="form-control"> </div>
       </div>
       <div class="row">
         <div class="col-md-4">

@@ -1,6 +1,11 @@
 <?php
+$lang['Eesnimi'] = 'Firstname';
+$lang['Perenimi'] = 'Lastname';
+$lang['Parool'] = 'Password';
+$lang['RegistreeriID'] = "ID-card Registration";
+
 $lang['Logi_sisse'] = 'Log in';
-$lang['Registreeru'] = 'Register';
+$lang['Registreeri'] = 'Register';
 $lang['Rendi_kõike'] = 'Rent everything';
 $lang['Kategooria'] = 'Category';
 $lang['Asukoht'] = 'Location';
@@ -30,7 +35,6 @@ $lang['Salvesta'] = 'Save';
 
 
 $lang['E-mail'] = 'E-mail';
-$lang['Parool'] = 'Password';
 
 $lang['Lisa_pilt'] = 'Choose a picture';
 $lang['Vali_fail'] = 'Choose a file';
@@ -42,4 +46,4 @@ $lang['Maksma'] = 'Pay';
 $lang['Muuda'] = 'Change';
 
 $lang['Tagasiside'] = 'Reviews';
-
+?>

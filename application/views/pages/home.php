@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
   <link rel="stylesheet" href="<?php echo base_url('assets/css/styles.css')?>"/>
+  <title>Esemete rent Eestis</title>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width">
+
+       <meta name="description" content="See leht võimaldab inimestel asju rentida ja rendile anda.">
+
+       <meta name="keywords" content="asjade rent">
 </head>
 <body>
-		<input id="b01" type="submit" value="Lisa kuulutus">
+		<button id="b01" onclick="location.href='<?php echo site_url('Pages/lisa_kuulutus');?>'">Lisa kuulutus</button>
 		<button id="b02" onclick="location.href='<?php echo site_url('Pages/logimine');?>'">Logi sisse</button>
 		<button id="b03" onclick="location.href='<?php echo site_url('Pages/regamine');?>'">Registreeru</button>
 		<h1>RENDI KÕIKE</h1>

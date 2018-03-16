@@ -1,7 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
   <link rel="stylesheet" href="<?php echo base_url('assets/css/login.css')?>"/>
+  <title>Sisse logimine</title>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width">
+
+       <meta name="description" content="See leht võimaldab inimestel asju rentida ja rendile anda.">
+
+       <meta name="keywords" content="asjade rent">
 </head>
 <body>
 <script>

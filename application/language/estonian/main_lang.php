@@ -1,6 +1,12 @@
-﻿<?php
+<?php
+
+$lang['Eesnimi'] = 'Eesnimi';
+$lang['Perenimi'] = 'Perenimi';
+$lang['Parool'] = 'Parool';
+$lang['RegistreeriID'] = "Registreeri ID-kaardiga";
+
 $lang['Logi_sisse'] = 'Logi sisse';
-$lang['Registreeru'] = 'Registreeru';
+$lang['Registreeri'] = 'Registreeru';
 $lang['Rendi_kõike'] = 'Rendi kõike';
 $lang['Kategooria'] = 'Kategooria';
 $lang['Asukoht'] = 'Asukoht';
@@ -27,7 +33,6 @@ $lang['Kuu'] = 'Kuu';
 $lang['Salvesta'] = 'Salvesta';
 
 $lang['E-mail'] = 'E-mail';
-$lang['Parool'] = 'Parool';
 
 $lang['Lisa_pilt'] = 'Lisa pilt';
 $lang['Vali_fail'] = 'Vali fail';
@@ -39,3 +44,4 @@ $lang['Maksma'] = 'Maksma';
 $lang['Muuda'] = 'Muuda';
 
 $lang['Tagasiside'] = 'Tagasiside';
+?>

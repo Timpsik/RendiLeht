@@ -3,9 +3,13 @@ class Pages extends CI_Controller {
 	
 	public function __construct()
         {
+			
+			
                 parent::__construct();
                 $this->load->model('pages_model');
                 $this->load->helper('url_helper');
+				$this->load->helper('language');
+				$this->lang->load('main_lang','estonian ');
         }
 
         public function view($page = 'home')
@@ -32,35 +36,42 @@ public function tingimused()
 }
 public function regamine()
 {		
+	$pealkiri=$this->lang->line('pealkiri');
+	
+	
 	$this->load->helper('form');
     $this->load->library('form_validation');
 	$this->load->library("phpmailer_library");
 
-    $data['Person'] = 'Add person';
+   
 
-    $this->form_validation->set_rules('meil', 'E-meil', 'required');
-    $this->form_validation->set_rules('nimi', 'Nimi', 'required');
+    $this->form_validation->set_rules('email', 'E-meil', 'required');
+    $this->form_validation->set_rules('eesnimi', 'Eesnimi', 'required');
+	$this->form_validation->set_rules('perenimi', 'Perenimi', 'required');
+	$this->form_validation->set_rules('parool', 'Parool', 'required');
 	
-	$nimi=$this->input->post('nimi');
-	$meil=$this->input->post('meil');
+	$eesnimi=$this->input->post('eesnimi');
+	$perenimi=$this->input->post('perenimi');
+	$meil=$this->input->post('email');
+	$parool=$this->input->post('parool');
 	
     if ($this->form_validation->run() === FALSE)
     {
-        $this->load->view('pages/regamine');
+        $this->load->view('pages/registreeru');
     }
     else
     {
 
 		$email = $this->phpmailer_library->load();
 	
-	$email->setFrom('rendileht@gmail.com', 'Mailer');
-	$email->addAddress($meil, $nimi);
-	$email->Subject = 'Your email subject would go here';
+	$email->setFrom('rendileht@gmail.com', 'Rendileht');
+	$email->addAddress($meil, $eesnimi);
+	$email->Subject = "Tere, $eesnimi";
 	$email->isHTML(true);
-	$email->Body = 'Your email content would go here. You can use HTML Tags but ensure you set the HTML email option to true or HTML will not work.';
+	$email->Body = 'Tänud, et registreerisid.';
 	$email->IsSMTP(); // telling the class to use SMTP
 	$email->Host = "smtp.gmail.com";
-	$email->SMTPDebug = 2;
+	$email->SMTPDebug = 0;
 	$email->SMTPSecure = 'tls';
 	$email->SMTPAuth = true;
 	$email->Port = 587;
@@ -76,9 +87,14 @@ public function regamine()
 	}
 
 	echo "Message has been sent";
-	$this->pages_model->add_people($nimi,$meil);
+	$this->pages_model->add_people($eesnimi,$perenimi,$meil);
         $this->logitud();
     }
 }
+public function lisa_kuulutus()
+{
+        $this->load->view('pages/lisa_kuulutus');
+}
+
 }
 ?>
