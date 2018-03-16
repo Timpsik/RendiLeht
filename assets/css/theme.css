@@ -139,6 +139,31 @@ sub {
 sup {
   top: -.5em; }
 
+#registreeri{
+ color: #fff;
+  background-color: #12bbad;
+  border-color: #12bbad;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+ #registreeri:hover {
+    color: #fff;
+    background-color: #0f988d;
+    border-color: #0e8c82; }
+#registreeri:focus, #registreeri.focus {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(18, 187, 173, 0.5); }
+ #registreeri.disabled,#registreeri:disabled {
+    color: #fff;
+    background-color: #12bbad;
+    border-color: #12bbad; }
+  #registreeri:not(:disabled):not(.disabled):active, #registreeri:not(:disabled):not(.disabled).active,
+  .show > #registreeri.dropdown-toggle {
+    color: #fff;
+    background-color: #0e8c82;
+    border-color: #0c8177; }
+   #registreeri:not(:disabled):not(.disabled):active:focus,#registreeri:not(:disabled):not(.disabled).active:focus,
+    .show >#registreeri.dropdown-toggle:focus {
+      box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem rgba(18, 187, 173, 0.5); }
+
 a {
   color: #12bbad;
   text-decoration: none;

@@ -4,7 +4,7 @@ $lang['Eesnimi'] = 'Eesnimi';
 $lang['Perenimi'] = 'Perenimi';
 $lang['Parool'] = 'Parool';
 $lang['RegistreeriID'] = "Registreeri ID-kaardiga";
-
+$lang['Tagasi'] = 'Tagasi avalehele';
 $lang['Logi_sisse'] = 'Logi sisse';
 $lang['Registreeri'] = 'Registreeru';
 $lang['Rendi_kõike'] = 'Rendi kõike';
@@ -16,6 +16,12 @@ $lang['Sisesta_märksõna'] = 'Sisesta märksõna';
 $lang['Otsi'] = 'Otsi';
 $lang['Top_kuulutused'] = 'Top kuulutused';
 $lang['Minu_töölaud'] = 'Minu töölaud';
+
+$lang['Kõik'] = 'Kõik';
+$lang['Elektroonika'] = 'Elektroonika';
+$lang['Mängud'] = 'Mängud';
+$lang['Spordivahendid'] = 'Spordivahendid';
+$lang['Riided'] = 'Riided';
 
 $lang['Lisa_kuulutus'] = 'Lisa kuulutus';
 $lang['Broneeringud'] = 'Broneeringud';

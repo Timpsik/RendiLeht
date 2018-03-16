@@ -3,10 +3,10 @@ $lang['Eesnimi'] = 'Firstname';
 $lang['Perenimi'] = 'Lastname';
 $lang['Parool'] = 'Password';
 $lang['RegistreeriID'] = "ID-card Registration";
-
+$lang['Tagasi'] = 'Homepage';
 $lang['Logi_sisse'] = 'Log in';
 $lang['Registreeri'] = 'Register';
-$lang['Rendi_kõike'] = 'Rent everything';
+$lang['Rendi_kõike'] = 'Rent stuff';
 $lang['Kategooria'] = 'Category';
 $lang['Asukoht'] = 'Location';
 $lang['Algkuupäev'] = 'Start date';
@@ -16,7 +16,11 @@ $lang['Otsi'] = 'Search';
 $lang['Top_kuulutused'] = 'Top advertises';
 $lang['Minu_töölaud'] = 'My account';
 
-
+$lang['Kõik'] = 'All';
+$lang['Elektroonika'] = 'Electronics';
+$lang['Mängud'] = 'Games';
+$lang['Spordivahendid'] = 'Sports equipment';
+$lang['Riided'] = 'Clothes';
 
 $lang['Lisa_kuulutus'] = 'Top kuulutused';
 $lang['Broneeringud'] = 'Reservations';
@@ -26,7 +30,7 @@ $lang['Minu_andmed'] = 'My profile';
 $lang['Pealkiri'] = 'Title';
 $lang['Kirjeldus'] = 'Description';
 $lang['Telefoni_number'] = 'Phone number';
-$lang['Hind'] = 'Price';õ
+$lang['Hind'] = 'Price';
 $lang['Tund'] = 'Hour';
 $lang['Päev'] = 'Day';
 $lang['Nädal'] = 'Week';

@@ -29,17 +29,18 @@ class Pages_model extends CI_Model {
 				}
         return $result;
 }
-public function add_people($nimi, $meil) {
+public function add_people($eesnimi, $perenimi, $meil) {
 	$username='mikk';
 				$password='parool';
 	try {
 	$pdo = new PDO('mysql:host=localhost;dbname=andmebaas', $username, $password);
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
  
-	$stmt = $pdo->prepare('INSERT INTO `inimesed` (`Id`, `Nimi`, `Elukoht`, `Telefon`, `Isikukood`, `Meil`, `Pangakonto`) 
-	VALUES (NULL, :Nimi, NULL, NULL, NULL, :Meil, NULL)');
+	$stmt = $pdo->prepare('INSERT INTO `inimesed` (`Id`, `Eesnimi`, `Perenimi`,  `Elukoht`, `Telefon`, `Isikukood`, `Meil`, `Pangakonto`) 
+	VALUES (NULL, :Eesnimi,:Perenimi, NULL, NULL, NULL, :Meil, NULL)');
 	$stmt->execute(array(
-    ':Nimi' => $nimi,
+    ':Eesnimi' => $eesnimi,
+	':Perenimi' => $perenimi,
 	':Meil' => $meil
   ));
  

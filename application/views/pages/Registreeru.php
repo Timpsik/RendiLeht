@@ -8,46 +8,11 @@
 
       <meta name="keywords" content="asjade rentimine">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/theme.css')?>">
+  <script type='text/javascript' src="<?php echo base_url('assets/js/fb.js');?>"></script>
   <title>Registreeri</title>
+  
 </head>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1933669939985923',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v2.12'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
-function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-}
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-   
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-});
-
-
-
-</script>
 <body>
-<select onchange="javascript:window.location.href='<?php echo base_url(); ?>LanguageSwitcher/switchLang/'+this.value;">
-	<option value="estonian" <?php if($this->session->userdata('site_lang') == 'estonian') echo 'selected="selected"'; ?>>Estonian</option>
-    <option value="english" <?php if($this->session->userdata('site_lang') == 'english') echo 'selected="selected"'; ?>>English</option>
-    
-</select>
 <?php echo validation_errors(); ?>
 
 <?php echo form_open('pages/regamine'); ?>
@@ -55,10 +20,19 @@ FB.getLoginStatus(function(response) {
   <div class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
+        <div class="col-md-6">
+			<select class="my-2" onchange="javascript:window.location.href='<?php echo base_url(); ?>LanguageSwitcher/switchLang/'+this.value;">
+				<option value="estonian" <?php if($this->session->userdata('site_lang') == 'estonian') echo 'selected="selected"'; ?>>Estonian</option>
+				<option value="english" <?php if($this->session->userdata('site_lang') == 'english') echo 'selected="selected"'; ?>>English</option>
+			</select></div>
+        <div class="col-md-6">
+		  <button class="btn btn-primary" onclick="location.href='<?php echo base_url();?>'"><?php echo lang("Tagasi");?></button>
+        </div>
       </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
       <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4"></div>
@@ -109,7 +83,7 @@ FB.getLoginStatus(function(response) {
       </div>
       <div class="row">
         <div class="col-md-4">
-          <h3 class="" >Email:
+          <h3 class="" ><?php echo lang("E-mail");?>:
             <br> </h3>
         </div>
         <div class="col-md-4">
@@ -139,10 +113,10 @@ FB.getLoginStatus(function(response) {
         <div class="col-md-2"></div>
         <div class="col-md-2">
           
-		  <input id="registreeri" type="submit" name="Registreeri" value=<?php echo lang("Registreeri");?> />
+		  <input class="btn btn-primary" type="submit" name="Registreeri" value=<?php echo lang("Registreeri");?> />
         </div>
         <div class="col-md-2">
-          <input id="registreeri" type="submit" name="RegistreeriIDkaardiga" value="<?php echo lang("RegistreeriID");?>" />
+          <input class="btn btn-primary" type="submit" name="RegistreeriIDkaardiga" value="<?php echo lang("RegistreeriID");?>" />
         </div>
         <div class="col-md-2"></div>
       </div>

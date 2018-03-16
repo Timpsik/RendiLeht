@@ -12,13 +12,13 @@ class Pages extends CI_Controller {
 				$this->lang->load('main_lang','estonian ');
         }
 
-        public function view($page = 'home')
+        public function view($page = 'Home')
 {		
         $this->load->view('pages/'.$page);
 }
 	public function logimine()
 {
-        $this->load->view('pages/logimine');
+        $this->load->view('pages/logi_sisse');
 }
 public function logitud()
 {		
@@ -41,7 +41,7 @@ public function regamine()
 	
 	$this->load->helper('form');
     $this->load->library('form_validation');
-	$this->load->library("phpmailer_library");
+	$this->load->library("Phpmailer_library");
 
    
 

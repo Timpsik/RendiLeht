@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="et">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="&lt;?php echo base_url('assets/css/theme.css')?&gt;">
-  <link rel="stylesheet" href="theme.css">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/theme.css')?>"/>
+	<script type='text/javascript' src="<?php echo base_url('assets/js/fb.js');?>"></script>
+	<title>Sisse logimine</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="See leht võimaldab inimestel asju rentida ja rendile anda.">
+	<meta name="keywords" content="asjade rent">
   </head>
 
 <body>
   <div class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-6"><select id="kategooria" name="kategooria" class="my-2">
-				<option value="Estonian">Estonian</option>
-				<option value="English">English</option>   
-			</select></div>
         <div class="col-md-6">
-          <a class="btn btn-primary btn-sm" href="#">Tagasi avalehele</a>
+			<select class="my-2" onchange="javascript:window.location.href='<?php echo base_url(); ?>LanguageSwitcher/switchLang/'+this.value;">
+				<option value="estonian" <?php if($this->session->userdata('site_lang') == 'estonian') echo 'selected="selected"'; ?>>Estonian</option>
+				<option value="english" <?php if($this->session->userdata('site_lang') == 'english') echo 'selected="selected"'; ?>>English</option>
+			</select>
+        <div class="col-md-6">
+          <button class="btn btn-primary" onclick="location.href='<?php echo base_url();?>'"><?php echo lang("Tagasi");?></button>
         </div>
       </div>
     </div>
@@ -41,10 +44,10 @@
       </div>
       <div class="row">
         <div class="col-md-2 offset-md-2">
-          <h3 class="" contenteditable="true">E-mail:</h3>
+          <h3 class=""><?php echo lang("E-mail");?></h3>
         </div>
         <div class="col-md-4">
-          <input type="email" class="form-control" placeholder="E-mail"> </div>
+          <input type="email" class="form-control" placeholder=<?php echo lang("E-mail");?>> </div>
         <div class="col-md-4"></div>
       </div>
       <div class="row">
@@ -54,19 +57,23 @@
       </div>
       <div class="row">
         <div class="col-md-2 offset-md-2">
-          <h3 class="" contenteditable="true">Parool:</h3>
+          <h3 class=""><?php echo lang("Parool");?>:</h3>
         </div>
         <div class="col-md-4">
-          <input type="password" class="form-control" placeholder="Parool"> </div>
+          <input type="password" class="form-control" placeholder=<?php echo lang("Parool");?>> </div>
         <div class="col-md-4"></div>
       </div>
       <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-          <a class="btn btn-primary" href="Home_sisselogitud.html">Logi sisse
+          <a class="btn btn-primary" href="Home_sisselogitud.html"><?php echo lang("L");?>
             <br> </a>
         </div>
         <div class="col-md-4"></div>
+		<fb:login-button id="fb"
+			scope="public_profile,email"
+			onlogin="checkLoginState();">
+		</fb:login-button>
       </div>
       <div class="row">
         <div class="col-md-4"></div>
