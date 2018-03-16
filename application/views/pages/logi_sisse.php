@@ -75,7 +75,7 @@
         <div class="col-md-4"></div>
 		<fb:login-button id="fb"
 			scope="public_profile,email"
-			onlogin="checkLoginState();">
+			onlogin="login();">
 		</fb:login-button>
         <div class="col-md-4"></div>
         <div class="col-md-4"></div>
