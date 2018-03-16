@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $lang['Logi_sisse'] = 'Logi sisse';
 $lang['Registreeru'] = 'Registreeru';
 $lang['Rendi_kõike'] = 'Rendi kõike';
@@ -9,6 +9,7 @@ $lang['Lõppkuupäev'] = 'Lõppkuupäev';
 $lang['Sisesta_märksõna'] = 'Sisesta märksõna';
 $lang['Otsi'] = 'Otsi';
 $lang['Top_kuulutused'] = 'Top kuulutused';
+$lang['Minu_töölaud'] = 'Minu töölaud';
 
 $lang['Lisa_kuulutus'] = 'Lisa kuulutus';
 $lang['Broneeringud'] = 'Broneeringud';
@@ -27,3 +28,14 @@ $lang['Salvesta'] = 'Salvesta';
 
 $lang['E-mail'] = 'E-mail';
 $lang['Parool'] = 'Parool';
+
+$lang['Lisa_pilt'] = 'Lisa pilt';
+$lang['Vali_fail'] = 'Vali fail';
+
+$lang['Lisainfo'] = 'Lisainfo';
+
+$lang['Maksma'] = 'Maksma';
+
+$lang['Muuda'] = 'Muuda';
+
+$lang['Tagasiside'] = 'Tagasiside';

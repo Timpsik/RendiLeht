@@ -9,6 +9,8 @@ $lang['Lõppkuupäev'] = 'End date';
 $lang['Sisesta_märksõna'] = 'Search for anything';
 $lang['Otsi'] = 'Search';
 $lang['Top_kuulutused'] = 'Top advertises';
+$lang['Minu_töölaud'] = 'My account';
+
 
 
 $lang['Lisa_kuulutus'] = 'Top kuulutused';
@@ -27,9 +29,17 @@ $lang['Kuu'] = 'Month';
 $lang['Salvesta'] = 'Save';
 
 
-
 $lang['E-mail'] = 'E-mail';
 $lang['Parool'] = 'Password';
 
+$lang['Lisa_pilt'] = 'Choose a picture';
+$lang['Vali_fail'] = 'Choose a file';
 
+$lang['Lisainfo'] = 'Additional information';
+
+$lang['Maksma'] = 'Pay';
+
+$lang['Muuda'] = 'Change';
+
+$lang['Tagasiside'] = 'Reviews';
 
