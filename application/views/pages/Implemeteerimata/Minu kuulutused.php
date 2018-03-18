@@ -2,30 +2,23 @@
 <html>
 
 <head>
-<?php
-if (!(isset($this->session->userdata['logged_in']))) {
-header("location: http://localhost/index.php/user_authentication/user_login_process");
-}
-?>
-<title>My Adverts</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="<?php echo base_url('assets/css/theme.css');?>">
+  <link rel="stylesheet" href="&lt;?php echo base_url('assets/css/theme.css')?&gt;">
+  <link rel="stylesheet" href="theme.css">
 <body>
   <div class="py-5">
     <div class="container">
       <div class="row">
+        <div class="col-md-6"><select id="kategooria" name="kategooria" class="my-2">
+				<option value="Estonian">Estonian</option>
+				<option value="English">English</option>   
+			</select></div>
         <div class="col-md-6">
-			<select class="my-2" onchange="javascript:window.location.href='<?php echo base_url(); ?>LanguageSwitcher/switchLang/'+this.value;">
-				<option value="estonian" <?php if($this->session->userdata('site_lang') == 'estonian') echo 'selected="selected"'; ?>>Estonian</option>
-				<option value="english" <?php if($this->session->userdata('site_lang') == 'english') echo 'selected="selected"'; ?>>English</option>
-			</select>
-        <div class="col-md-6">
-          <button class="btn btn-primary" onclick="location.href='<?php echo base_url();?>'"><?php echo lang("Tagasi");?></button>
+          <a class="btn btn-primary btn-sm" href="#">Tagasi avalehele</a>
         </div>
       </div>
     </div>
-  </div>
   </div>
   <div class="py-5">
     <div class="container">
@@ -33,28 +26,27 @@ header("location: http://localhost/index.php/user_authentication/user_login_proc
         <div class="col-md-4">
           <div class="row">
             <div class="col-md-10">
-              <a class="btn btn-primary w-50" href="#"><?php echo lang("Broneeringud");?></a>
+              <a class="btn btn-primary w-50" href="#">Broneeringud</a>
             </div>
           </div>
           <div class="row">
-
             <div class="col-md-10">
-              <a class="btn btn-primary my-2 w-50" href="#"><?php echo lang("Ajalugu");?></a>
+              <a class="btn btn-primary my-2 w-50" href="#">Ajalugu</a>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12 w-75">
-              <a class="btn btn-primary my-2" href="#"><?php echo lang("Minu_kuulutused");?></a>
+              <a class="btn btn-primary my-2" href="#">Minu kuulutused</a>
             </div>
           </div>
           <div class="row">
             <div class="col-md-10 ">
-              <a class="btn btn-primary my-2 w-50" href="#"><?php echo lang("Lisa_kuulutus");?></a>
+              <a class="btn btn-primary my-2 w-50" href="#">Lisa kuulutus</a>
             </div>
           </div>
           <div class="row">
             <div class="col-md-7">
-              <a class="btn btn-primary my-2 w-75" href="#"><?php echo lang("Minu_andmed");?></a>
+              <a class="btn btn-primary my-2 w-75" href="#">Minu andmed</a>
             </div>
           </div>
         </div>
@@ -62,7 +54,7 @@ header("location: http://localhost/index.php/user_authentication/user_login_proc
           <div class="col-md-12">
             <div class="row">
               <div class="col-md-4">
-                 </div>
+                <img class="img-fluid d-block" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg"> </div>
               <div class="col-md-3">
                 <div class="row">
                   <div class="col-md-12" style="transition: all 0.25s;">
@@ -107,7 +99,7 @@ header("location: http://localhost/index.php/user_authentication/user_login_proc
                 </div>
                 <div class="row">
                   <div class="col-md-12">
-                    <a class="btn btn-primary my-2" href="#"><?php echo lang("Lisainfo");?></a>
+                    <a class="btn btn-primary my-2" href="#">Lisainfo</a>
                   </div>
                 </div>
               </div>
@@ -129,15 +121,6 @@ header("location: http://localhost/index.php/user_authentication/user_login_proc
                 </div>
                 <div class="row">
                   <div class="col-md-12"></div>
-				  		  <?php foreach ($kuulutus as $kuulutus_data): ?>
-
-        <h3><?php echo $kuulutus_data['user_mail']; ?></h3>
-        <div class="main">
-		<h3>   <?php echo "Emaili kuulutusi:" ?></h3>
-             <h3>   <?php echo $kuulutus_data['kuulutusi']; ?></h3>
-        </div>
-
-<?php endforeach; ?>
                 </div>
                 <div class="row"></div>
               </div>
