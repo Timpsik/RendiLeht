@@ -15,14 +15,14 @@ $lang['Sisesta_märksõna'] = 'Search for anything';
 $lang['Otsi'] = 'Search';
 $lang['Top_kuulutused'] = 'Top advertises';
 $lang['Minu_töölaud'] = 'My account';
-
+$lang['Logi_välja'] = 'Log out';
 $lang['Kõik'] = 'All';
 $lang['Elektroonika'] = 'Electronics';
 $lang['Mängud'] = 'Games';
 $lang['Spordivahendid'] = 'Sports equipment';
 $lang['Riided'] = 'Clothes';
 
-$lang['Lisa_kuulutus'] = 'Top kuulutused';
+$lang['Lisa_kuulutus'] = 'Add advert';
 $lang['Broneeringud'] = 'Reservations';
 $lang['Ajalugu'] = 'History';
 $lang['Minu_kuulutused'] = 'My ads';

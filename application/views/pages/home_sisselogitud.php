@@ -4,33 +4,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="&lt;?php echo base_url('assets/css/theme.css')?&gt;">
-  <link rel="stylesheet" href="theme.css">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/theme.css');?>">
 </head>
 
 <body>
   <div class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-2"><select id="kategooria" name="kategooria" class="my-2">
-				<option value="Estonian">Estonian</option>
-				<option value="English">English</option>   
-			</select></div>
         <div class="col-md-2">
-          <a class="btn btn-primary" href="#">Minu töölaud</a>
+			<select class="my-2" onchange="javascript:window.location.href='<?php echo base_url(); ?>LanguageSwitcher/switchLang/'+this.value;">
+				<option value="estonian" <?php if($this->session->userdata('site_lang') == 'estonian') echo 'selected="selected"'; ?>>Estonian</option>
+				<option value="english" <?php if($this->session->userdata('site_lang') == 'english') echo 'selected="selected"'; ?>>English</option>
+			</select>
+		</div>
+        <div class="col-md-2">
+          <a class="btn btn-primary" href="#"><?php echo lang("Minu_töölaud");?></a>
+		  
         </div>
         <div class="col-md-2"></div>
         <div class="col-md-2"></div>
-        <div class="col-md-2"></div>
+        <div class="col-md-2">
+		<button class="btn btn-primary" onclick="location.href='<?php echo base_url('User_Authentication/logout');?>'"><?php echo lang("Logi_välja");?></button>
+			</div>
         <div class="col-md-2 ">
-          <a class="btn btn-primary" href="#">Lisa kuulutus</a>
+          <a class="btn btn-primary" href="<?php echo base_url('upload/fail');?>"><?php echo lang("Lisa_kuulutus");?></a>
         </div>
       </div>
       <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-          <h1 class="display-3">Rendi kõike</h1>
-        </div>
+          <h1 class="display-3"><?php echo lang("Rendi_kõike");?></h1>
+                </div>
         <div class="col-md-4"></div>
       </div>
       <div class="row">
@@ -42,23 +46,23 @@
         <div class="col-md-2"></div>
         <div class="col-md-2">
           <div class="col-md-12">
-            <h4 class="" contenteditable="true">Kategooria</h4>
+            <h4 class=""><?php echo lang("Kategooria");?></h4>
           </div>
         </div>
         <div class="col-md-2"><select id="kategooria" name="kategooria">
-				<option value="Kõik">Kõik</option>
-				<option value="Elektroonika">Elektroonika</option>
-				<option value="Mängud">Mängud</option>
-				<option value="Spordivahendid">Spordivahendid</option>
-				<option value="Riided">Riided</option>
+				<option value="Kõik"><?php echo lang("Kõik");?></option>
+				<option value="Elektroonika"><?php echo lang("Elektroonika");?></option>
+				<option value="Mängud"><?php echo lang("Mängud");?></option>
+				<option value="Spordivahendid"><?php echo lang("Spordivahendid");?></option>
+				<option value="Riided"><?php echo lang("Riided");?></option>
 			</select></div>
         <div class="col-md-2">
           <div class="col-md-12">
-            <h4 class="">Asukoht</h4>
+            <h4 class=""><?php echo lang("Asukoht");?></h4>
           </div>
         </div>
-        <div class="col-md-2"><select id="kategooria" name="kategooria">
-				<option value="Kõik">Kõik</option>
+        <div class="col-md-2"><select id="kategooria" name="asukoht">
+				<option value="Kõik"><?php echo lang("Kõik");?></option>
 				<option value="Harjumaa">Harjumaa</option>
 				<option value="Tartumaa">Tartumaa</option>
 				<option value="Ida-virumaa">Ida-Virumaa</option>
@@ -89,13 +93,13 @@
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-2">
-          <h4 class="">Algkuupäev
+          <h4 class=""><?php echo lang("Algkuupäev");?>
             <br> </h4>
         </div>
         <div class="col-md-2">
           <input type="date" class="form-control"> </div>
         <div class="col-md-2">
-          <h4 class="">Lõppkuupäev &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+          <h4 class=""><?php echo lang("Lõppkuupäev");?> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
             <br> </h4>
         </div>
         <div class="col-md-2">
@@ -103,11 +107,11 @@
       </div>
       <div class="row w-75">
         <div class="col-md-8 offset-md-4">
-          <input type="text" class="form-control" placeholder="Sisesta märksõna"> </div>
+          <input type="text" class="form-control" placeholder="<?php echo lang("Sisesta_märksõna");?>"> </div>
       </div>
       <div class="row">
         <div class="col-md-7 offset-md-5">
-          <a class="btn btn-primary w-25 my-2" href="#">Otsi</a>
+          <a class="btn btn-primary w-25 my-2" href="#"><?php echo lang("Otsi");?></a>
         </div>
       </div>
     </div>
@@ -116,9 +120,18 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="">Top kuulutused</h1>
+          <h1 class=""><?php echo lang("Top_kuulutused");?></h1>
         </div>
       </div>
     </div>
   </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-4"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>

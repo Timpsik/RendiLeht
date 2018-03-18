@@ -5,10 +5,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/theme.css');?>">
-	<link rel="stylesheet" href="theme.css">
 	<meta name="description" content="See leht võimaldab inimestel asju rentida ja rendile anda.">
 	<meta name="keywords" content="asjade rent">
-
+</head>
 <body>
   <div class="py-5">
     <div class="container">
@@ -17,16 +16,15 @@
 			<select class="my-2" onchange="javascript:window.location.href='<?php echo base_url(); ?>LanguageSwitcher/switchLang/'+this.value;">
 				<option value="estonian" <?php if($this->session->userdata('site_lang') == 'estonian') echo 'selected="selected"'; ?>>Estonian</option>
 				<option value="english" <?php if($this->session->userdata('site_lang') == 'english') echo 'selected="selected"'; ?>>English</option>
-    
 			</select>
 		</div>
       <div class="col-md-2">
-          <button class="btn btn-primary" onclick="location.href='<?php echo site_url('Pages/logimine');?>'"><?php echo lang("Logi_sisse");?></button>
+          <button class="btn btn-primary" onclick="location.href='<?php echo base_url();?>User_Authentication/user_login_process/'"><?php echo lang("Logi_sisse");?></button>
       </div>
         <div class="col-md-2"></div>
         <div class="col-md-2"></div>
         <div class="col-md-2 ">
-          <button class="btn btn-primary" onclick="location.href='<?php echo site_url('Pages/regamine');?>'"><?php echo lang("Registreeri");?></button>
+          <button class="btn btn-primary" onclick="location.href='<?php echo base_url();?>User_Authentication/new_user_registration/'"><?php echo lang("Registreeri");?></button>
             <br> </a>
         </div>
       </div>
