@@ -16,7 +16,7 @@ $lang['Sisesta_märksõna'] = 'Sisesta märksõna';
 $lang['Otsi'] = 'Otsi';
 $lang['Top_kuulutused'] = 'Top kuulutused';
 $lang['Minu_töölaud'] = 'Minu töölaud';
-
+$lang['Logi_välja'] = 'Logi välja';
 $lang['Kõik'] = 'Kõik';
 $lang['Elektroonika'] = 'Elektroonika';
 $lang['Mängud'] = 'Mängud';
@@ -37,7 +37,7 @@ $lang['Päev'] = 'Päev';
 $lang['Nädal'] = 'Nädal';
 $lang['Kuu'] = 'Kuu';
 $lang['Salvesta'] = 'Salvesta';
-
+$lang['Vali_keel'] = 'Vali keel';
 $lang['E-mail'] = 'E-mail';
 
 $lang['Lisa_pilt'] = 'Lisa pilt';
