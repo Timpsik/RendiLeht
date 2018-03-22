@@ -72,7 +72,7 @@ public function lisa_kuulutus($data) {
 		return TRUE;
 }
 public function kuulutused($email){
-	$query = "SELECT user_mail,COUNT(*) AS kuulutusi FROM v_Auth  INNER JOIN v_kuulutused ON v_Auth.Id=v_kuulutused.Omanik";
+	$query = "SELECT user_mail, COUNT(*) AS kuulutusi FROM v_Auth INNER JOIN v_kuulutused ON v_Auth.Id=v_kuulutused.Omanik GROUP BY Omanik";
 	$result = $this->db->query($query)->result_array();;
 	return $result;
 }
