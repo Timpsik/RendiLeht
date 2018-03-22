@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="&lt;?php echo base_url('assets/css/theme.css')?&gt;">
   <link rel="stylesheet" href="theme.css">
 </head>
-
 <body>
   <div class="py-5">
     <div class="container">
@@ -21,7 +20,9 @@
         </div>
         <div class="col-md-2"></div>
         <div class="col-md-2"></div>
-        <div class="col-md-2"></div>
+        <div class="col-md-2">
+          <a class="btn btn-primary" href="#">Logi välja</a>
+        </div>
         <div class="col-md-2 ">
           <a class="btn btn-primary" href="#">Lisa kuulutus</a>
         </div>
