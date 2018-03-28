@@ -29,9 +29,9 @@
 	  </select>
 	</div>
 	<div class="form-group">
-		<label><?php echo lang("Asukoht");?></label>
+		<label><?php echo lang("Maakond");?></label>
 		<select name="asukoht" class="form-control"></div>
-			<option value="Kõik">Kõik</option>
+			<option value="Kõik"><?php echo lang("Kõik");?></option>
 			<option value="Harjumaa">Harjumaa</option>
 			<option value="Tartumaa">Tartumaa</option>
 			<option value="Ida-virumaa">Ida-Virumaa</option>
@@ -47,7 +47,11 @@
 			<option value="Läänemaa">Läänemaa</option>
 			<option value="Hiiumaa">Hiiumaa</option>   
 	  </select></div>
-
+	  <div class="form-group">
+	<label><?php echo lang("Aadress");?></label>
+	<input type="text" class="form-control" name="aadress" placeholder=<?php echo lang("Aadress");?>>
+</div>
+	
 	<div class="form-group">
 	<label><?php echo lang("Hind");?></label>
 	<input type="text" class="form-control" name="tund" placeholder=<?php echo lang("Tund");?>>
@@ -57,5 +61,5 @@
 	</div>
   <div class="form-group">
 	<button type="submit" class="btn btn-default"><?php echo lang("Salvesta");?></button>
-</div>
+	</div>
   </form>

@@ -4,7 +4,8 @@
 
 		public function register(){
 			$data['title'] = 'Sign Up';
-
+			$this->load->model('mail_model');
+			
 			$this->form_validation->set_rules('eesnimi', 'Eesnimi', 'required');
 			$this->form_validation->set_rules('perenimi', 'Perenimi', 'required');
 			$this->form_validation->set_rules('email', 'Email', 'required|callback_kontrolli_emaili_leidumist');
@@ -21,6 +22,7 @@
 				$enc_password = md5($this->input->post('parool'));
 
 				$this->user_model->register($enc_password);
+				$this->mail_model->registration_mail($this->input->post('email'));
 				$this->session->set_flashdata('user_registered', '<?php echo lang("Registreeritud");?>');
 				redirect('items');
 			}
