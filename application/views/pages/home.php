@@ -3,11 +3,9 @@
       <e><h1 class="text-center"><?php echo lang("Rendi_kõike");?></h1><br><br>
     </div>
   </div>
-
 <div>
 <form class="form-horizontal">
   <fieldset>
-
           <div class="col-lg-12">
         <input class="form-control" id="inputEmail" placeholder="<?php echo lang("Sisesta_märksõna");?>" type="text">
       </div>
