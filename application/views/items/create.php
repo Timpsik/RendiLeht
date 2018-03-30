@@ -30,7 +30,7 @@
 	</div>
 	<div class="form-group">
 		<label><?php echo lang("Maakond");?></label>
-		<select name="asukoht" class="form-control"></div>
+		<select name="maakond" class="form-control"></div>
 			<option value="Kõik"><?php echo lang("Kõik");?></option>
 			<option value="Harjumaa">Harjumaa</option>
 			<option value="Tartumaa">Tartumaa</option>

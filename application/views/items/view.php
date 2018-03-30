@@ -1,4 +1,6 @@
-
+<script type="text/javascript">
+  var aadress = "<?php print $aadress; ?>";
+</script>
 <small class="item-date"><?php echo lang("Lisamise_aeg");?> <?php echo $item['lisamise_aeg']; ?></small>
 <br>
 
@@ -13,7 +15,7 @@
 		<input type="submit" value="Delete" class="btn btn-danger">
 	</form>
 <?php endif; ?>
-
+<div id="googleMap1" style="width:400px;height:300px;"></div>
 <hr>
 
 <h3><?php echo lang("Kommentaarid");?></h3>

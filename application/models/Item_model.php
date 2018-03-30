@@ -29,7 +29,8 @@
 				'slug' => $slug,
 				'lühikirjeldus' => $this->input->post('lühikirjeldus'),
 				'kirjeldus' => $this->input->post('kirjeldus'),
-				'asukoht' => $this->input->post('asukoht'),
+				'maakond' => $this->input->post('maakond'),
+				'aadress' => $this->input->post('aadress'),
 				'kategooria_id' => $this->input->post('kategooria_id'),
 				'kasutaja_id' => $this->session->userdata('user_id'),
 				

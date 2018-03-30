@@ -6,7 +6,7 @@
 			<a href="#" class="btn btn-primary btn-block"><?php echo lang("Broneeringud");?></a>
 			<a href="#" class="btn btn-primary btn-block"><?php echo lang("Ajalugu");?></a>
 			<a href="#" class="btn btn-primary btn-block"><?php echo lang("Minu_kuulutused");?></a>
-			<a href="#" class="btn btn-primary btn-block"><?php echo lang("Konto_seaded");?></a>		
+			<a href="<?php echo base_url();?>users/settings" class="btn btn-primary btn-block"><?php echo lang("Konto_seaded");?></a>		
 
 	
 		</div>

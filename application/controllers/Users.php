@@ -122,5 +122,11 @@
 			$this->load->view('users/account', $data);
 			$this->load->view('templates/footer');
 		}
+		public function settings() {
+			$data['title'] = 'Settings';
+			$this->load->view('templates/header');
+			$this->load->view('users/settings', $data);
+			$this->load->view('templates/footer');
+		}
 	}
 

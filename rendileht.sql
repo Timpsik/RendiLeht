@@ -174,6 +174,17 @@ ALTER TABLE `kategooriad`
 --
 ALTER TABLE `kommentaarid`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  
+CREATE TABLE `statistika` (
+  `id` int(11) AUTO_INCREMENT, AUTO_INCREMENT=1
+  `asukoht` varchar(50) NOT NULL,
+  `brauser` varchar(50) NOT NULL,
+  `opsysteem` varchar(50) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*asukoht muuta maakonnaks ka enne */
+ALTER TABLE `esemed` ADD `aadress` VARCHAR(150) NOT NULL AFTER `maakond`;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
