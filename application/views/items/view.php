@@ -1,6 +1,4 @@
-<script type="text/javascript">
-  var aadress = "<?php print $aadress; ?>";
-</script>
+
 <small class="item-date"><?php echo lang("Lisamise_aeg");?> <?php echo $item['lisamise_aeg']; ?></small>
 <br>
 

@@ -11,6 +11,7 @@
 	<script src="<?php echo base_url(); ?>/assets/js/charts.js"></script>
 	<script type="text/javascript">
   var baseurl = "<?php echo base_url() ?>";
+  var aadress = "<?php print $aadress; ?>";
 </script>
 	</head>
 	<body>
