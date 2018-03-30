@@ -22,7 +22,7 @@ $lang['Sisesta_märksõna'] = 'Sisesta märksõna';
 $lang['Otsi'] = 'Otsi';
 $lang['Top_kuulutused'] = 'Top kuulutused';
 $lang['Minu_töölaud'] = 'Minu töölaud';
-
+$lang['Statistika'] = 'Statistika';
 $lang['Kõik'] = 'Kõik';
 $lang['Elektroonika'] = 'Elektroonika';
 $lang['Mängud'] = 'Mängud';

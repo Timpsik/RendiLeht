@@ -184,6 +184,7 @@ CREATE TABLE `statistika` (
 
 /*asukoht muuta maakonnaks ka enne */
 ALTER TABLE `esemed` ADD `aadress` VARCHAR(150) NOT NULL AFTER `maakond`;
+ALTER TABLE `statistika` ADD `ip` VARCHAR(20) NOT NULL AFTER `id`;
 
 COMMIT;
 

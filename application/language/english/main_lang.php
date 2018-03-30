@@ -21,7 +21,7 @@ $lang['Sisesta_märksõna'] = 'Search for anything';
 $lang['Otsi'] = 'Search';
 $lang['Top_kuulutused'] = 'Top advertises';
 $lang['Minu_töölaud'] = 'My account';
-
+$lang['Statistika'] = 'Statistics';
 $lang['Kõik'] = 'All';
 $lang['Elektroonika'] = 'Electronics';
 $lang['Mängud'] = 'Games';
