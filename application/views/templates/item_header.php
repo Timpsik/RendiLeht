@@ -1,6 +1,6 @@
-<html>
+<html lang="et">
 	<head>
-		<title>Rendileht</title>
+		<title><?php echo $title ?></title>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
   <script src="//cdn.ckeditor.com/4.9.0/standard/ckeditor.js"></script>	

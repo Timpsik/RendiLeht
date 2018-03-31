@@ -10,10 +10,10 @@
 
 			$this->pagination->initialize($config);
 
-			$data['title'] = 'Latest items';
+			$data['title'] = 'Last items';
 			$data['items'] = $this->item_model->get_esemed(FALSE, $config['per_page'], $offset);
-
-			$this->load->view('templates/header');
+		
+			$this->load->view('templates/header',$data);
 			$this->load->view('items/index', $data);
 			$this->load->view('templates/footer');
 		}
@@ -29,7 +29,7 @@
 			
 			$data['nimi'] = $data['item']['nimi'];
 			$data['aadress'] = $data['item']['aadress'];
-
+			$data['title'] = "Kuulutus";
 			$this->load->view('templates/item_header', $data);
 			$this->load->view('items/view', $data);
 			$this->load->view('templates/footer');
@@ -42,12 +42,12 @@
 			
 			$data['title'] = 'Create item';
 			$data['categories'] = $this->item_model->get_kategooriad();
-
+			$data['title'] = "Lisa kuulutus";
 			$this->form_validation->set_rules('nimi', 'Nimi', 'required');
 			$this->form_validation->set_rules('kirjeldus', 'Kirjeldus', 'required');
 
 			if($this->form_validation->run() === FALSE){
-				$this->load->view('templates/header');
+				$this->load->view('templates/header', $data);
 				$this->load->view('items/create', $data);
 				$this->load->view('templates/footer');
 			} else {
@@ -131,8 +131,8 @@
 
 			$data['title'] = 'Latest items';
 			$data['items'] = $this->item_model->get_esemed(FALSE, $config['per_page'], $offset);
-
-			$this->load->view('templates/header');
+			$data['title'] = "Minu kuulutused";
+			$this->load->view('templates/header', $data);
 			$this->load->view('items/myitems', $data);
 			$this->load->view('templates/footer');
 		}

@@ -3,7 +3,8 @@
 
 
 		public function register(){
-			$data['title'] = 'Sign Up';
+			$data['title'] = 'Registreeri';
+			$data['content'] ="Registreeri uus kasutaja, et lisada kuulutusi ja rentida esemeid.";
 			$this->load->model('mail_model');
 			
 			$this->form_validation->set_rules('eesnimi', 'Eesnimi', 'required');
@@ -14,7 +15,7 @@
 			$this->form_validation->set_rules('parool2', 'Parool2', 'matches[parool]');
 
 			if($this->form_validation->run() === FALSE){
-				$this->load->view('templates/header');
+				$this->load->view('templates/header', $data);
 				$this->load->view('users/register', $data);
 				$this->load->view('templates/footer');
 			} else { 
@@ -31,7 +32,7 @@
 
 		public function registeremail(){
 
-			$data['title'] = 'Sign Up';
+			$data['title'] = 'Registreeri';
 
 			$this->form_validation->set_rules('eesnimi', 'Eesnimi', 'required');
 			$this->form_validation->set_rules('perenimi', 'Perenimi', 'required');
@@ -56,13 +57,13 @@
 
 		public function login(){
 
-			$data['title'] = 'Sign In';
-
+			$data['title'] = 'Logi sisse';
+			$data['content'] ="Logi oma kasutajaga sisse, et pääseda ligi meie pakutavatele teenustele.";
 			$this->form_validation->set_rules('email', 'Email', 'required');
 			$this->form_validation->set_rules('parool', 'Parool', 'required');
 
 			if($this->form_validation->run() === FALSE) {
-				$this->load->view('templates/header');
+				$this->load->view('templates/header', $data);
 				$this->load->view('users/login', $data);
 				$this->load->view('templates/footer');
 			} 
@@ -117,14 +118,16 @@
 		}
 
 		public function account() {
-			$data['title'] = 'Sign In';
-			$this->load->view('templates/header');
+			$data['title'] = 'Konto';
+			$data['content'] ="Vaata enda kontot puudutavat informatsiooni.";
+			$this->load->view('templates/header', $data);
 			$this->load->view('users/account', $data);
 			$this->load->view('templates/footer');
 		}
 		public function settings() {
-			$data['title'] = 'Settings';
-			$this->load->view('templates/header');
+			$data['title'] = 'Seaded';
+			$data['content'] ="Vaata oma konto andmeid ja vajaduse korral muuda.";
+			$this->load->view('templates/header', $data);
 			$this->load->view('users/settings', $data);
 			$this->load->view('templates/footer');
 		}
