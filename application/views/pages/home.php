@@ -1,11 +1,13 @@
-  <div class="row">
+<div class="row">
     <div class="col-md-20">
       <e><h1 class="text-center"><?php echo lang("Rendi_kõike");?></h1><br><br>
     </div>
   </div>
+
 <div>
 <form class="form-horizontal">
   <fieldset>
+
           <div class="col-lg-12">
         <input class="form-control" id="inputEmail" placeholder="<?php echo lang("Sisesta_märksõna");?>" type="text">
       </div>
@@ -26,7 +28,7 @@
     </div>
 
     <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label"><?php echo lang("Asukoht");?></label>
+      <label for="inputEmail" class="col-lg-2 control-label"><?php echo lang("Maakond");?></label>
       <div class="col-lg-10">
          <select class="form-control" id="select">
         <option value="Kõik"><?php echo lang("Kõik");?></option>

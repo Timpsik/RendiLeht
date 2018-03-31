@@ -30,7 +30,7 @@
 			$data['nimi'] = $data['item']['nimi'];
 			$data['aadress'] = $data['item']['aadress'];
 
-			$this->load->view('templates/header');
+			$this->load->view('templates/item_header', $data);
 			$this->load->view('items/view', $data);
 			$this->load->view('templates/footer');
 		}

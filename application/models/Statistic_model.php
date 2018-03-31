@@ -5,16 +5,22 @@
 			$this->load->database();
 		}
 		public function add(){
-			$ip=$this->input->ip_address();
+			$this->load->library("geolib/geolib");
+			$ipdata = $this->geolib->ip_info();
+			$ip=$ipdata['geoplugin_request'];
 			$this->db->where('ip',$ip);
 			$query = $this->db->get('statistika');
 				if ($query->num_rows() == 0){
-					$getloc = json_decode(file_get_contents("http://ipinfo.io/"));
+					$userdata=$this->geolib->user_agent();
+					$asukoht=$ipdata['geoplugin_countryName'];
+					if($asukoht==null) {
+						 $asukoht="Could not find";
+					}
 					$data = array(
 						'ip' => $ip,
-						'asukoht' => $getloc->country,
-						'brauser' =>  $this->agent->browser(),
-						'opsüsteem' => $this->agent->platform()
+						'asukoht' => $asukoht,
+						'brauser' =>  $userdata['browser'],
+						'opsüsteem' => $userdata['platform']
 					);
 					$this->db->insert('statistika', $data);
 			} 	

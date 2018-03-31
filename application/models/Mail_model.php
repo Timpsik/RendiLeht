@@ -22,15 +22,6 @@ class Mail_model extends CI_Model {
 	$email->Username = "rendileht@gmail.com";
 	$email->Password = "123456789VR";
 
-	if(!$email->Send())
-	{
-	   echo "Message could not be sent. 
-	";
-	   echo "Mailer Error: " . $email->ErrorInfo;
-	   exit;
-	}
-
-	echo "Message has been sent";
 	}
 }
 	?>
