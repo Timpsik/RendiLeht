@@ -11,38 +11,37 @@
 				$this->db->limit($limit, $offset);
 			
 			if($slug === FALSE){
-				$this->db->order_by('esemed.id', 'DESC');
-				$this->db->join('kategooriad', 'kategooriad.id = esemed.kategooria_id');
-				$query = $this->db->get('esemed');
+				$this->db->order_by('v_esemed.id', 'DESC');
+				$this->db->join('v_kategooriad', 'v_kategooriad.id = v_esemed.kategooria_id');
+				$query = $this->db->get('v_esemed');
 				return $query->result_array();
 			}
 
-			$query = $this->db->get_where('esemed', array('slug' => $slug));
+			$query = $this->db->get_where('v_esemed', array('slug' => $slug));
 			return $query->row_array();
 		}
 
-		public function lisa_ese(){
+		public function lisa_ese($item_image){
 			$slug = url_title($this->input->post('nimi'));
 
-			$data = array(
-				'nimi' => $this->input->post('nimi'),
-				'slug' => $slug,
-				'lühikirjeldus' => $this->input->post('lühikirjeldus'),
-				'kirjeldus' => $this->input->post('kirjeldus'),
-				'maakond' => $this->input->post('maakond'),
-				'aadress' => $this->input->post('aadress'),
-				'kategooria_id' => $this->input->post('kategooria_id'),
-				'kasutaja_id' => $this->session->userdata('user_id'),
+			
+			$nimi = $this->input->post('nimi');
+				$slug = $slug;
+				$lyhikirjeldus = $this->input->post('lühikirjeldus');
+				$kirjeldus = $this->input->post('kirjeldus');
+				$maakond = $this->input->post('maakond');
+				$aadress = $this->input->post('aadress');
+				$kategooria_id = $this->input->post('kategooria_id');							
+				$item_image = $item_image;
+				$kasutaja_id = $this->session->userdata('user_id');
 				
-			);
-
-			return $this->db->insert('esemed', $data);
+            $query = $this->db->query("CALL lisa_ese('$nimi','$slug','$lyhikirjeldus', '$kirjeldus', '$maakond', '$aadress', '$kategooria_id', '$item_image', '$kasutaja_id')");
+		//	return $this->db->insert('esemed', $data);
 		}
 
 		public function kustuta_ese($id){
 
-			$this->db->where('id', $id);
-			$this->db->delete('esemed');
+			$query = $this->db->query("CALL kustuta_ese($id)");
 
 			return true;
 		}
@@ -50,34 +49,29 @@
 		public function update_item(){
 
 			$slug = url_title($this->input->post('pealkiri'));
-
-			$data = array(
-				'pealkiri' => $this->input->post('pealkiri'),
-				'slug' => $slug,
-				'lühikirjeldus' => $this->input->post('lühikirjeldus'),
-				'kirjeldus' => $this->input->post('kirjeldus'),
-				'kategooria_id' => $this->input->post('kategooria_id')
-			);
-
-			$this->db->where('id', $this->input->post('id'));
-
-			return $this->db->update('esemed', $data);
+            $nimi = $this->input->post('nimi');
+				$lyhikirjeldus = $this->input->post('lühikirjeldus');
+				$kirjeldus = $this->input->post('kirjeldus');
+				$kategooria_id = $this->input->post('kategooria_id');
+            $id=$this->input->post('id');
+             $query = $this->db->query("CALL uuenda_ese($id,'$nimi','$slug','$lyhikirjeldus', '$kirjeldus', '$kategooria_id')");
+		
 		}
 
 		public function get_kategooriad(){
 
 			$this->db->order_by('kategooria');
-			$query = $this->db->get('kategooriad');
+			$query = $this->db->get('v_kategooriad');
 
 			return $query->result_array();
 		}
 
 		public function get_esemed_kategooria_järgi($category_id){
 
-			$this->db->order_by('esemed.id', 'DESC');
-			$this->db->join('kategooriad', 'kategooriad.id = esemed.kategooria_id');
+			$this->db->order_by('v_esemed.id', 'DESC');
+			$this->db->join('v_kategooriad', 'v_kategooriad.id = v_esemed.kategooria_id');
 
-			$query = $this->db->get_where('esemed', array('kategooria_id' => $category_id));
+			$query = $this->db->get_where('v_esemed', array('kategooria_id' => $category_id));
 			
 			return $query->result_array();
 		}

@@ -52,8 +52,8 @@
 				$this->load->view('templates/header', $data);
 				$this->load->view('items/create', $data);
 				$this->load->view('templates/footer');
-			} else {
-				// Upload Image
+			 }
+			 else {
 				$config['upload_path'] = './assets/images/items';
 				$config['allowed_types'] = 'gif|jpg|png';
 				$config['max_size'] = '2048';
@@ -65,17 +65,21 @@
 				if(!$this->upload->do_upload()){
 					$errors = array('error' => $this->upload->display_errors());
 					$item_image = 'noimage.jpg';
-				} else {
+				} 
+				else {
 					$data = array('upload_data' => $this->upload->data());
 					$item_image = $_FILES['userfile']['name'];
 				}
 
-				$this->item_model->lisa_ese();
+				$this->item_model->lisa_ese($item_image);
 				$this->session->set_flashdata('item_created', 'Your item has been created');
 
 				redirect('items');
 			}
 		}
+
+
+
 
 		public function delete($id){
 
@@ -95,7 +99,7 @@
 			
 			$data['item'] = $this->item_model->get_esemed($link);
 
-			if($this->session->userdata('user_id') != $this->item_model->get_esemed($link)['user_id'])
+			if($this->session->userdata('user_id') != $this->item_model->get_esemed($link)['kasutaja_id'])
 				redirect('items');
 
 			$data['categories'] = $this->item_model->get_kategooriad();
@@ -104,8 +108,9 @@
 				show_404();
 			
 			$data['title'] = 'Edit item';
+			$data['content'] = 'Muuda kuulutuse kirjeldust';
 
-			$this->load->view('templates/header');
+			$this->load->view('templates/header', $data);
 			$this->load->view('items/edit', $data);
 			$this->load->view('templates/footer');
 		}

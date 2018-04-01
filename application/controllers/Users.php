@@ -78,7 +78,7 @@
 
 					$user_data = array(
 						'user_id' => $user_id,
-						'username' => $username,
+					//	'username' => $username,
 						'logged_in' => true
 					);
 

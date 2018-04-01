@@ -4,19 +4,23 @@
     </div>
   </div>
 
+    
+    
 <div>
 <form class="form-horizontal">
-  <fieldset>
 
-          <div class="col-lg-12">
-        <input class="form-control" id="inputEmail" placeholder="<?php echo lang("Sisesta_märksõna");?>" type="text">
+
+          <div class="form-group">
+              <label for="otsing" hidden> Sisesta otsisõna</label>
+        <input class="form-control" id="otsing" placeholder="<?php echo lang("Sisesta_märksõna");?>" type="text">
+        <br>
       </div>
-    </div>
+    
 
     <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label"><?php echo lang("Kategooria");?></label>
+      <label for="kategooria" class="col-lg-2 control-label"><?php echo lang("Kategooria");?></label>
       <div class="col-lg-10">
-         <select class="form-control" id="select">
+         <select class="form-control" id="kategooria">
         <option value="Kõik"><?php echo lang("Kõik");?></option>
         <option value="Elektroonika"><?php echo lang("Elektroonika");?></option>
         <option value="Mängud"><?php echo lang("Mängud");?></option>
@@ -28,9 +32,9 @@
     </div>
 
     <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label"><?php echo lang("Maakond");?></label>
+      <label for="maakond" class="col-lg-2 control-label"><?php echo lang("Maakond");?></label>
       <div class="col-lg-10">
-         <select class="form-control" id="select">
+         <select class="form-control" id="maakond">
         <option value="Kõik"><?php echo lang("Kõik");?></option>
         <option value="Harjumaa">Harjumaa</option>
         <option value="Tartumaa">Tartumaa</option>
@@ -52,24 +56,23 @@
     </div>
 
      <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label"><?php echo lang("Algkuupäev");?></label>
+      <label for="alg" class="col-lg-2 control-label"><?php echo lang("Algkuupäev");?></label>
       <div class="col-lg-2">
          <input type="date" class="form-control" id="alg">
         <br>
       </div>
-    </div>
-
-
-    <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label"><?php echo lang("Lõppkuupäev");?></label>
+      <label for="lopp" class="col-lg-2 control-label"><?php echo lang("Lõppkuupäev");?></label>
       <div class="col-lg-2">
-         <input type="date" class="form-control" id="alg">
+         <input type="date" class="form-control" id="lopp">
         <br>
       </div>
     </div>
-
+    
     <div class="form-group">
     <button type="submit" class="btn btn-primary btn-block"><?php echo lang("Otsi");?></button>
     </div>
-
+    </form>
+    </div>
     <div class="form-group">
+     </div>   
+    

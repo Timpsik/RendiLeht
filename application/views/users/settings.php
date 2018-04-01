@@ -1,5 +1,3 @@
-
-<body>
   <div class="py-5">
     <div class="container">
       <div class="row">
@@ -61,6 +59,5 @@
             <div class="col-md-8 offset-md-4"> </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+ 
+  

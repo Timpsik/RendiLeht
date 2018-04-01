@@ -15,7 +15,7 @@
 			$data['ip']=$this->input->ip_address();
 			$data['title'] = "Statistika";
 			$data['content'] ="Meie avalehe külastajate põhjal koostatud statistika";
-			$this->load->view('templates/header', $data);
+			$this->load->view('templates/stats_header', $data);
 			$this->load->view('statistics/view', $data);
 			$this->load->view('templates/footer');
 		}

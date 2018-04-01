@@ -6,18 +6,18 @@
 		}
 
 		public function lisa_kommentaar($eseme_id){
-
+            $tekst=$this->input->post('tekst');
 			$data = array(
 				'eseme_id' => $eseme_id,
 				'tekst' => $this->input->post('tekst')
 			);
-
-			return $this->db->insert('kommentaarid', $data);
+            $query = $this->db->query("CALL lisa_kommentaar($eseme_id,'$tekst')");
+			
 		}
 
 		public function get_kommentaarid($eseme_id){
 
-			$query = $this->db->get_where('kommentaarid', array('eseme_id' => $eseme_id));
+			$query = $this->db->get_where('v_kommentaarid', array('eseme_id' => $eseme_id));
 			
 			return $query->result_array();
 		}

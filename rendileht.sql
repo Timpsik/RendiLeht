@@ -186,6 +186,13 @@ CREATE TABLE `statistika` (
 ALTER TABLE `esemed` ADD `aadress` VARCHAR(150) NOT NULL AFTER `maakond`;
 ALTER TABLE `statistika` ADD `ip` VARCHAR(20) NOT NULL AFTER `id`;
 
+CREATE PROCEDURE `lisa_kommentaar`(IN `a_eseme_id` INT, IN `a_tekst` TEXT) NOT DETERMINISTIC NO SQL SQL SECURITY DEFINER BEGIN INSERT INTO kommentaarid (eseme_id, tekst) VALUES (a_eseme_id, a_tekst); END
+CREATE PROCEDURE `lisa_ese`(IN `a_nimi` VARCHAR(255), IN `a_slug` VARCHAR(100), IN `a_lkirjeldus` VARCHAR(50), IN `a_kirjeldus` TEXT, IN `a_maakond` VARCHAR(255), IN `a_aadress` VARCHAR(255), IN `a_kategooria` INT, IN `a_pilt` VARCHAR(255), IN `a_kasutaja` INT) NOT DETERMINISTIC NO SQL SQL SECURITY DEFINER BEGIN INSERT INTO esemed ( `kategooria_id`, `kasutaja_id`, `nimi`, `slug`, `lühikirjeldus`, `kirjeldus`, `maakond`, `aadress`, `item_image`) 
+VALUES (a_kategooria, a_kasutaja, a_nimi, a_slug, a_lkirjeldus, a_kirjeldus, a_maakond, a_aadress, a_pilt); END
+CREATE PROCEDURE `kustuta_ese`(IN `a_id` INT) NOT DETERMINISTIC NO SQL SQL SECURITY DEFINER DELETE FROM esemed WHERE id=a_id;
+CREATE PROCEDURE `uuenda_ese`(IN `a_id` INT, IN `a_pealkiri` VARCHAR(255), IN `a_slug` VARCHAR(255), IN `a_lkirjeldus` VARCHAR(50), IN `a_kirjeldus` TEXT, IN `a_kategooria` INT) NOT DETERMINISTIC NO SQL SQL SECURITY DEFINER BEGIN UPDATE esmed SET kategooria_id = a_kategooria, nimi =a_pealkiri, slug=a_slug, lühikirjeldus=a_lkirjedlus, kirjeldus=a_kirjeldus WHERE id=a_id; END
+CREATE PROCEDURE `lisa_stat`(IN `a_ip` INT, IN `a_asukoht` INT, IN `a_brauser` INT, IN `a_os` INT) NOT DETERMINISTIC NO SQL SQL SECURITY DEFINER BEGIN INSERT INTO statistika(ip,asukoht,brauser,opsüsteem) VALUES(a_ip,a_asukoht,a_brauser,a_os); END
+CREATE PROCEDURE `lisa_kasutaja`(IN `a_eesnimi` VARCHAR(255), IN `a_perenimi` VARCHAR(255), IN `a_email` VARCHAR(255), IN `a_telefon` VARCHAR(14), IN `a_parool` VARCHAR(255)) NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER BEGIN INSERT INTO kasutajad (`eesnimi`, `perenimi`, `email`, `telefon`, `parool`) VALUES (a_eesnimi, a_perenimi, a_email, a_telefon, a_parool); END
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

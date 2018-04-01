@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$config['base_url'] = 'http://http://rendilehtveeb.tk/';
+$config['base_url'] = 'http://rendilehtveeb.tk/';
 
 $config['index_page'] = '';
 
