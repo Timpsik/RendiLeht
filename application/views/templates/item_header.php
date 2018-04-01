@@ -1,12 +1,13 @@
+<!DOCTYPE html>
 <html lang="et">
 	<head>
-		<title><?php echo $title ?></title>
+		<title>"<?php echo $title ?>"</title>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
   <script src="//cdn.ckeditor.com/4.9.0/standard/ckeditor.js"></script>	
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDokQNZshQlGU0CI4ukO4yj4xpeli-S5Jc&callback=myMap"></script>
   <script src="<?php echo base_url(); ?>/assets/js/maps.js"></script>
-	<script type="text/javascript">
+	<script
   var baseurl = "<?php echo base_url() ?>";
   var aadress = "<?php echo $aadress; ?>";
 </script>
