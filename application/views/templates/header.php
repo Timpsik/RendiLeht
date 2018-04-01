@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang=et>
 	<head>
-		<title><?php echo $title ?></title>
+		<title>"<?php echo $title ?>"</title>
 		<meta name="google-site-verification" content="qSSMcl_-j1cWLb2N7cxkUmDs6O2J1HDhS69nKn_UvqM" />
-		<meta name="description" content=<?php echo $content ?> />
+		<meta name="description" content="<?php echo $content ?>" />
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
   <script src="//cdn.ckeditor.com/4.9.0/standard/ckeditor.js"></script>	
