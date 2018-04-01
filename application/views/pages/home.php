@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-20">
-      <e><h1 class="text-center"><?php echo lang("Rendi_kõike");?></h1><br><br>
+      <h1 class="text-center"><?php echo lang("Rendi_kõike");?></h1><br><br>
     </div>
   </div>
 
