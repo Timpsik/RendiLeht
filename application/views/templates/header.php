@@ -9,10 +9,10 @@
   <script src="//cdn.ckeditor.com/4.9.0/standard/ckeditor.js"></script>	
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDokQNZshQlGU0CI4ukO4yj4xpeli-S5Jc&callback=myMap"></script>
   <script src="<?php echo base_url(); ?>/assets/js/maps.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+  <script src="https://www.gstatic.com/charts/loader.js"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-	<script type="text/javascript">
+	<script>
   var baseurl = "<?php echo base_url() ?>";
 </script>
 	</head>
