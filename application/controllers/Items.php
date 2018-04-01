@@ -10,7 +10,8 @@
 
 			$this->pagination->initialize($config);
 
-			$data['title'] = 'Last items';
+			$data['title'] = 'Viimati lisatud';
+			$data['content'] = 'Lehele viimati lisatud kuulutused';
 			$data['items'] = $this->item_model->get_esemed(FALSE, $config['per_page'], $offset);
 		
 			$this->load->view('templates/header',$data);
