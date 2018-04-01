@@ -41,9 +41,10 @@
 			if(!$this->session->userdata('logged_in'))
 				redirect('users/login');
 			
-			$data['title'] = 'Create item';
+			
 			$data['categories'] = $this->item_model->get_kategooriad();
-			$data['title'] = "Lisa kuulutus";
+			$data['title'] = 'Lisa kuulutus';
+			$data['content'] = 'Lisa uus ese, mida soovid välja rentida';
 			$this->form_validation->set_rules('nimi', 'Nimi', 'required');
 			$this->form_validation->set_rules('kirjeldus', 'Kirjeldus', 'required');
 
