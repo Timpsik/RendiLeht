@@ -66,10 +66,11 @@ $lang['Muuda'] = 'Muuda';
 $lang['Tekst'] = 'Tekst';
 $lang['Saada'] = 'Saada';
 
-$lang['Tund'] = 'Tund';
-$lang['Päev'] = 'Päev';
-$lang['Nädal'] = 'Nädal';
-$lang['Kuu'] = 'Kuu';
+$lang['Tunnihind'] = 'Tunnihind';
+$lang['Päevahind'] = 'Päevahind';
+$lang['Nädalahind'] = 'Nädalahind';
+$lang['Kuuhind'] = 'Kuuhind';
+$lang['Osta'] = 'Osta';
 
 $lang['Broneeringud'] = 'Broneeringud';
 $lang['Ajalugu'] = 'Ajalugu';
@@ -84,6 +85,17 @@ $lang['Lisa_kuulutus'] = 'Lisa kuulutus';
 $lang['Ava_kuulutus'] = 'Ava kuulutus';
 $lang['Konto'] = 'Konto';
 
+$lang['Stats_riik'] = 'Külastajad riigiti';
+$lang['Stats_brauser'] = 'Külastajate brauserid';
+$lang['Stats_OS'] = 'Külastajate OS';
+
+$lang['PankÕnnestus'] = 'Pangamakse oli edukas';
+$lang['PankEbannestus'] = 'Pangamakse ebaõnnestus';
+
+$lang['PankÕnnestusTekst'] = 'Pangamakse on sooritatud, aitäh, varsti teavitame kuidas ja kunas eseme kätte saate. ';
+$lang['PankEbannestusTekst'] = 'Pangamakse kahjuks ei õnnestunud. Proovige uuesti või saatke oma murega meile meil. ';
+
+$lang['Avalehele'] = 'Avalehele';
 $lang['Sisselogitud'] = 'Sisselogimine õnnestus';
 $lang['Sisselogimine_ebaõnnestus'] = 'Sisselogimine ebaõnnestus';
 $lang['Registreeritud'] = 'Kasutajad registreeritud';

@@ -21,7 +21,8 @@ class Mail_model extends CI_Model {
 	$email->Port = 587;
 	$email->Username = "rendileht@gmail.com";
 	$email->Password = "123456789VR";
-
+    $email->Send();
 	}
+	
 }
 	?>

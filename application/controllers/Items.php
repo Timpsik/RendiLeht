@@ -143,4 +143,7 @@
 			$this->load->view('items/myitems', $data);
 			$this->load->view('templates/footer');
 		}
+		
+		
+			
 	}

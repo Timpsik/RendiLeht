@@ -13,9 +13,20 @@
 		<input type="submit" value="Delete" class="btn btn-danger">
 	</form>
 <?php endif; ?>
-<div id="googleMap1" style="width:400px;height:300px;"></div>
+<div id="googleMap1" style="width:400px;height:300px;"> 
+</div>
 <hr>
-
+<div>
+<form action="/Bank/pay" method="post">
+  <input  type="radio" name="price" value="<?php echo $item['tunnis']?>" checked> <?php echo lang("Tunnihind") . ": " . $item['tunnis'] ." eur";?><br>
+  <input  type="radio" name="price" value="<?php echo $item['päevas']?>"> <?php echo lang("Päevahind") . ": " . $item['päevas'] ." eur";?><br>
+  <input  type="radio" name="price" value="<?php echo $item['nädalas']?>"> <?php echo lang("Nädalahind") . ": " . $item['nädalas'] ." eur";?><br>
+  <input  type="radio" name="price" value="<?php echo $item['kuus']?>"> <?php echo lang("Kuuhind") . ": " . $item['kuus'] ." eur";?><br>
+  <input type=hidden class="form-control" name="nimi" value="<?php echo $item['nimi']; ?>">
+  <input type=hidden class="form-control" name="omanik" value="<?php$item['kasutaja_id']?>">
+  <input type="submit" value=<?php echo lang("Osta");?>>
+  
+</form>
 <h3><?php echo lang("Kommentaarid");?></h3>
 
 <?php if($comments) : ?>

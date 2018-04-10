@@ -65,15 +65,20 @@ $lang['Muuda'] = 'Change';
 $lang['Tekst'] = 'Text';
 $lang['Saada'] = 'Submit';
 
-$lang['Tund'] = 'Hour';
-$lang['Päev'] = 'Day';
-$lang['Nädal'] = 'Week';
-$lang['Kuu'] = 'Month';
+$lang['Tunnihind'] = 'Hourly price';
+$lang['Päevahind'] = 'Day price';
+$lang['Nädalahind'] = 'Weekly price';
+$lang['Kuuhind'] = 'Monthly price';
+
 
 $lang['Broneeringud'] = 'Reservations';
 $lang['Ajalugu'] = 'History';
 $lang['Minu_kuulutused'] = 'My advertises';
 $lang['Konto_seaded'] = 'Account settings';
+
+$lang['Stats_riik'] = 'Visitors by location';
+$lang['Stats_brauser'] = 'Visitors by browser';
+$lang['Stats_OS'] = 'Visitors by OS';
 
 $lang['Tagasiside'] = 'Reviews';
 $lang['KKK'] = 'FAQ';
@@ -82,7 +87,15 @@ $lang['Renditavad_esemed'] = 'Latest items';
 $lang['Lisa_kuulutus'] = 'Add advert';
 $lang['Ava_kuulutus'] = 'Open advert';
 $lang['Konto'] = 'Account';
+$lang['Osta'] = 'Buy';
 
+$lang['PankÕnnestus'] = 'Payment was successful';
+$lang['PankEbannestus'] = 'Payment failed';
+
+$lang['PankÕnnestusTekst'] = 'Payment completed. Thank you. We will soon contact you how and where you will recieve the item ';
+$lang['PankEbannestusTekst'] = 'Unfortunately payment did not go through. Please try again or sent us a email with your problem.';
+
+$lang['Avalehele'] = 'Homepage';
 $lang['Sisselogitud'] = 'Logged in successfully';
 $lang['Sisselogimine_ebaõnnestus'] = 'Invalid username or password';
 $lang['Registreeritud'] = 'Registration was succesful';

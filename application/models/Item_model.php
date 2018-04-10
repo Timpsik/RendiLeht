@@ -13,10 +13,11 @@
 			if($slug === FALSE){
 				$this->db->order_by('v_esemed.id', 'DESC');
 				$this->db->join('v_kategooriad', 'v_kategooriad.id = v_esemed.kategooria_id');
+				
 				$query = $this->db->get('v_esemed');
 				return $query->result_array();
 			}
-
+					$this->db->join('v_hinnad', 'v_hinnad.id = v_esemed.hinna_id');
 			$query = $this->db->get_where('v_esemed', array('slug' => $slug));
 			return $query->row_array();
 		}
@@ -34,8 +35,12 @@
 				$kategooria_id = $this->input->post('kategooria_id');							
 				$item_image = $item_image;
 				$kasutaja_id = $this->session->userdata('user_id');
+				$tund = $this->input->post('tund');
+				$päev = $this->input->post('päev');
+				$nädal = $this->input->post('nädal');
+				$kuu = $this->input->post('kuu');
 				
-            $query = $this->db->query("CALL lisa_ese('$nimi','$slug','$lyhikirjeldus', '$kirjeldus', '$maakond', '$aadress', '$kategooria_id', '$item_image', '$kasutaja_id')");
+            $query = $this->db->query("CALL lisa_ese('$nimi','$slug','$lyhikirjeldus', '$kirjeldus', '$maakond', '$aadress', '$kategooria_id', '$item_image', '$kasutaja_id' , '$tund' , '$päev' , '$nädal' , '$kuu')");
 		//	return $this->db->insert('esemed', $data);
 		}
 
