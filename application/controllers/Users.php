@@ -72,13 +72,13 @@
 				$email = $this->input->post('email');
 				$parool = md5($this->input->post('parool'));
 
-				$user_id = $this->user_model->login($email, $parool);
+				$user_data = $this->user_model->login($email, $parool);
 
-				if($user_id){
+				if($user_data){
 
 					$user_data = array(
-						'user_id' => $user_id,
-					//	'username' => $username,
+						'user_id' => $user_data['user_id'],
+						'user_name' => $user_data['user_name'],
 						'logged_in' => true
 					);
 

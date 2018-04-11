@@ -7,11 +7,9 @@
 
 		public function lisa_kommentaar($eseme_id){
             $tekst=$this->input->post('tekst');
-			$data = array(
-				'eseme_id' => $eseme_id,
-				'tekst' => $this->input->post('tekst')
-			);
-            $query = $this->db->query("CALL lisa_kommentaar($eseme_id,'$tekst')");
+			$autor = $this->input->post('autor');
+			$postitaja_id = $this->input->post('autori_id');
+            $query = $this->db->query("CALL lisa_kommentaar($eseme_id,'$tekst','$postitaja_id','$autor')");
 			
 		}
 

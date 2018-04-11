@@ -21,9 +21,14 @@
 
 			$result = $this->db->get('v_kasutajad');
 
-			if($result->num_rows() == 1)
-				return $result->row(0)->id;
-			else 
+			if($result->num_rows() == 1){
+				
+				$data = array(
+					'user_id'     => $result->row(0)->id,
+					'user_name'     => $result->row(0)->eesnimi
+			);
+			 return $data;
+			}else 
 				return false;
 			
 		}

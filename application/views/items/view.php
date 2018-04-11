@@ -32,7 +32,7 @@
 <?php if($comments) : ?>
 	<?php foreach($comments as $comment) : ?>
 		<div class="well">
-			<h5><?php echo $comment['tekst']; ?> [<strong>kommenteerija nimi</strong>]</h5>
+			<h5><?php echo $comment['tekst']; ?> [<strong><?php echo $comment['autori_nimi']; ?></strong>]</h5>
 		</div>
 	<?php endforeach; ?>
 <?php else : ?>
@@ -45,6 +45,8 @@
 <?php echo validation_errors(); ?>
 <?php echo form_open('comments/create/'.$item['id']); ?>
 	<div class="form-group">
+		<input type=hidden class="form-control" name="autor" value="<?php echo $this->session->userdata('user_name')?>">
+		<input type=hidden class="form-control" name="autori_id" value="<?php echo $this->session->userdata('user_id')?>">
 		<label for="kommentaar"><?php echo lang("Tekst");?></label>
 		<textarea id="kommentaar" name="tekst" class="form-control"></textarea>
 	</div>
