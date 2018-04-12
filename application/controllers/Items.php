@@ -24,18 +24,28 @@
 			$data['item'] = $this->item_model->get_esemed($slug);
 			$item_id = $data['item']['id'];
 			$data['comments'] = $this->comment_model->get_kommentaarid($item_id);
-
+            $data['added']='puudu';
 			if(empty($data['item']))
 				show_404();
 			
 			$data['nimi'] = $data['item']['nimi'];
 			$data['aadress'] = $data['item']['aadress'];
 			$data['title'] = "Kuulutus";
+			$this->form_validation->set_rules('tekst', 'Kommentaar', 'required');
+			if ($this->form_validation->run()== TRUE) {
+			    $this->comment_model->lisa_kommentaar($item_id);
+                $data['added']='olemas';
+                $data['comments'] = $this->comment_model->get_kommentaarid($item_id);
+            }
+        
 			$this->load->view('templates/item_header', $data);
 			$this->load->view('items/view', $data);
 			$this->load->view('templates/footer');
 		}
-
+        public function add_comment(){
+            $this->comment_model->lisa_kommentaar();
+        }
+        
 		public function create(){
 
 			if(!$this->session->userdata('logged_in'))

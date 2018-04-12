@@ -23,7 +23,7 @@
   <input  type="radio" name="price" value="<?php echo $item['nädalas']?>"> <?php echo lang("Nädalahind") . ": " . $item['nädalas'] ." eur";?><br>
   <input  type="radio" name="price" value="<?php echo $item['kuus']?>"> <?php echo lang("Kuuhind") . ": " . $item['kuus'] ." eur";?><br>
   <input type=hidden class="form-control" name="nimi" value="<?php echo $item['nimi']; ?>">
-  <input type=hidden class="form-control" name="omanik" value="<?php$item['kasutaja_id']?>">
+  <input type=hidden class="form-control" name="omanik" value="<?php echo $item['kasutaja_id']?>">
   <input type="submit" value=<?php echo lang("Osta");?>>
   
 </form>
@@ -41,15 +41,16 @@
 
 <hr>
 <h3><?php echo lang("Lisa_kommentaar");?></h3>
-
+<?php echo $added; ?>
 <?php echo validation_errors(); ?>
-<?php echo form_open('comments/create/'.$item['id']); ?>
-	<div class="form-group">
-		<input type=hidden class="form-control" name="autor" value="<?php echo $this->session->userdata('user_name')?>">
-		<input type=hidden class="form-control" name="autori_id" value="<?php echo $this->session->userdata('user_id')?>">
+<?php $meetod=$item['nimi'];
+echo form_open('items/'.$item['slug'],array('id'=>"kommentaari_lisamine",'method'=>'post')); ?>
+	<div id=lisa_kommentaar class="form-group">
+		<input type=hidden id="autor" class="form-control" name="autor" value="<?php echo $this->session->userdata('user_name')?>">
+		<input type=hidden id="autori_id" class="form-control" name="autori_id" value="<?php echo $this->session->userdata('user_id')?>">
 		<label for="kommentaar"><?php echo lang("Tekst");?></label>
 		<textarea id="kommentaar" name="tekst" class="form-control"></textarea>
 	</div>
 	<input type="hidden" name="slug" value="<?php echo $item['slug']; ?>">
-	<button class="btn btn-primary" type="submit"><?php echo lang("Saada");?></button>
+	<button id="submitComment" class="btn btn-primary" type="submit"><?php echo lang("Saada");?></button>
 </form>

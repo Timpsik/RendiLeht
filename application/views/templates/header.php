@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
   <script src="//cdn.ckeditor.com/4.9.0/standard/ckeditor.js"></script>	
+  <script href="<?php echo base_url(); ?>/assets/js/offline.min.js"></script>	
+  <script href="<?php echo base_url(); ?>/assets/js/offline.js"></script>
 	</head>
 	<body>
 	<nav class="navbar navbar-inverse">

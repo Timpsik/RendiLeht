@@ -4,9 +4,12 @@
 		<title><?php echo $title ?></title>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//cdn.ckeditor.com/4.9.0/standard/ckeditor.js"></script>	
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDokQNZshQlGU0CI4ukO4yj4xpeli-S5Jc&callback=myMap"></script>
   <script src="<?php echo base_url(); ?>/assets/js/maps.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/js/offline.min.js"></script>	
+  <script src="<?php echo base_url(); ?>/assets/js/offline.js"></script>
 	<script>
   var baseurl = "<?php echo base_url() ?>";
   var aadress = "<?php echo $aadress; ?>";
