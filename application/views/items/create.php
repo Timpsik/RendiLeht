@@ -13,7 +13,7 @@
 
   <div class="form-group">
   	<label for="lkirjeldus"><?php echo lang("Lühikirjeldus");?></label>
-  <textarea id="lkirjeldus" class="form-control" rows="3" name="lühikirjeldus" id="textArea"></textarea>
+  <textarea id="lkirjeldus" class="form-control" rows="3" name="lühikirjeldus" placeholder="<?php echo lang('Lühikirjeldus');?>"id="textArea"></textarea>
   </div>
   <div class="form-group">
 	<label for="editor1"><?php echo lang("Kirjeldus");?></label>
@@ -23,14 +23,16 @@
   <div class="form-group">
 	  <label for="kategooria"><?php echo lang("Kategooria");?></label>
 	  <select id="kategooria" name="kategooria_id" class="form-control">
+	  <option value="" disabled selected><?php echo lang('Vali_kategooriad');?></option>
 		  <?php foreach($categories as $category): ?>
-			<option value="<?php echo $category['id']; ?>"><?php echo $category['kategooria']; ?></option>
+			<option value="<?php echo $category['id']; ?>"><?php echo lang($category['kategooria']); ?></option>
 		  <?php endforeach; ?>
 	  </select>
 	</div>
 	<div class="form-group">
 		<label for="maakond"><?php echo lang("Maakond");?></label>
 		<select id="maakond" name="maakond" class="form-control"></div>
+		<option value="" disabled selected><?php echo lang('Vali_maakond');?></option>
 			<option value="Kõik"><?php echo lang("Kõik");?></option>
 			<option value="Harjumaa">Harjumaa</option>
 			<option value="Tartumaa">Tartumaa</option>

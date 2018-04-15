@@ -124,12 +124,13 @@
 			$this->load->view('users/account', $data);
 			$this->load->view('templates/footer');
 		}
+		/*
 		public function settings() {
 			$data['title'] = 'Seaded';
 			$data['content'] ="Vaata oma konto andmeid ja vajaduse korral muuda.";
 			$this->load->view('templates/header', $data);
 			$this->load->view('users/settings', $data);
 			$this->load->view('templates/footer');
-		}
+		} */
 	}
 
