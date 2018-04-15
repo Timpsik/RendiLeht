@@ -17,8 +17,8 @@
   </div>
   <div class="form-group">
 	<label for="editor1"><?php echo lang("Kirjeldus");?></label>
-	<textarea id="editor1" class="form-control" name="kirjeldus" placeholder=<?php echo lang("Kirjeldus");?>></textarea>			<script>		CKEDITOR.replace( 'editor1' );	</script>
-  </div>  <div class="form-group">	<label>Lisa pilt</label>	<input type="file" name="userfile" size="20"></div>
+	<textarea id="editor1" class="form-control" name="kirjeldus" placeholder=<?php echo lang("Kirjeldus");?>></textarea>		
+  </div>  <div class="form-group">	<label><?php echo lang("Lisa_pilt");?></label>	<input type="file" name="userfile" size="20"></div>
 
   <div class="form-group">
 	  <label for="kategooria"><?php echo lang("Kategooria");?></label>

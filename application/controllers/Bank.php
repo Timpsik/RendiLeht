@@ -8,9 +8,9 @@
 			$data['content'] = 'Maksa rentida soovitava eseme eest';
 			$selgitus=$this->input->post('nimi');
 			$hind=$this->input->post('price');
-			$this->load->helper('date');
-			$format = "%Y-%M-%d %H:%i";
-			$time=mdate($format);
+			$dt = new DateTime("now", new DateTimeZone('Europe/Helsinki'));
+			$time= $dt->format('Y-m-d\TH:i:s\+0300');
+
 			$fields = array(
 					"VK_SERVICE"     => "1011",
 					"VK_VERSION"     => "008",
@@ -24,8 +24,8 @@
 					"VK_LANG"        => "EST",
 					"VK_MSG"         => "$selgitus",
 					"VK_RETURN"      => base_url('bank/success'),
-					"VK_CANCEL"      => base_url('bank/cancel'),
-					"VK_DATETIME"    => "2018-04-10T17:35:50+0300",
+					"VK_CANCEL"      => base_url('bank/success'),
+					"VK_DATETIME"    => $time,
 					"VK_ENCODING"    => "utf-8",
 			);
 			$private_key = openssl_pkey_get_private(
@@ -88,10 +88,10 @@ $fields["VK_MAC"] = base64_encode($signature);
 			}
 			public function success(){
 				
-				$data['title'] = 'Pangamakse edukas';
+				$data['title'] = 'Pangamakse sooritatud';
 				$data['content'] = 'Tagasi kaupmehe juurde';
 				$this->load->view('templates/header', $data);
-				$this->load->view('bank/success', $data);
+				$this->load->view('bank/edukas', $data);
 				$this->load->view('templates/footer');
 			}
 			public function cancel(){

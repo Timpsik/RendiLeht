@@ -5,14 +5,13 @@ var run = function(){
  setInterval(run, 5000);
  
 var offlineCounter = 0;
-    console.log("Laadimisel");
+
 $(document).ready(function() {
-    console.log("Laetud");
   var $online = $('.online'),
       $offline = $('.offline');
 
   Offline.on('down', function () {
-    console.log("NOW OFFLINE");
+    console.log("Offline");
     $online.fadeOut(function () {
       $offline.fadeIn();
     });
@@ -25,7 +24,7 @@ $(document).ready(function() {
   }
 
   Offline.on('up', function () {
-    console.log("NOW ONLINE");
+    console.log("Online");
     $offline.fadeOut(function () {
       $online.fadeIn();
     });
@@ -34,32 +33,30 @@ $(document).ready(function() {
     },5000);
     if (localStorage.comment0) {
       for (i = 0; i < offlineCounter; i++) {
-        console.log("Attempting upload nr " + offlineCounter + ". Message: " + localStorage.getItem("comment" + i));
+        console.log("Laen üles kommentaari nr: " + offlineCounter + ". Sisu: " + localStorage.getItem("comment" + i));
         $.ajax({
           type: "POST",
           url: window.location.href,
           data: {"tekst": localStorage.getItem("comment" + i), "autor":  localStorage.getItem("author" + i), 
           "autori_id": localStorage.getItem("id" + i)},
           success: function () {
-            console.log("Uploaded comment nr " + offlineCounter + ". Message: " + localStorage.getItem("comment" + i));
+            console.log("Laadisin üles kommentaari nr: " + offlineCounter + ". Sisu: " + localStorage.getItem("comment" + i));
             localStorage.removeItem("comment" + i);
             localStorage.removeItem("author" + i)
             localStorage.removeItem("id" + i)
           }
         });
       }
-      $("#lisa_kommentaar").append('<p id="uploadedLocal">Connection restored, comments uploaded.</p>');
+      $("#lisa_kommentaar").append('<p id="Lokaalse_info">Connection restored, comments uploaded./Ühendus taastatud, kommentaarid üles laetud.</p>');
       setTimeout(function(){
-        $("#uploadedLocal").fadeOut("slow");
+        $(".Lokaalse_info").fadeOut("slow");
       },5000);
       offlineCounter = 0;
     }
   });
 
   var submitComment = function (e) {
-      console.log("nupp vajutatud");
     Offline.check();
-    console.log("Offline kontrollitud");
     console.log(Offline.state);
     if (Offline.state == 'down') {
         console.log("lisan lokaalselt");
@@ -72,13 +69,13 @@ $(document).ready(function() {
          localStorage.setItem("author" + offlineCounter, autor);
           localStorage.setItem("id" + offlineCounter, id);
         $("#kommentaar").val("");
-        console.log("Saved comment nr " + offlineCounter + ". Message: " + comment);
-        console.log("Saved nr " + offlineCounter + ". Message: " + autor);
-        console.log("Saved  nr " + offlineCounter + ". Message: " + id);
+        console.log("Salvestasin kommentaari nr: " + offlineCounter + ". Sisu: " + comment);
+        console.log("Salvestasin kommentaari nr: " + offlineCounter + ". Autor: " + autor);
+        console.log("Salvestasin kommentaari nr: " + offlineCounter + ". Autori_id: " + id);
         offlineCounter += 1;
-        $("#lisa_kommentaar").append('<p class="savedLocal">You are offline, comment saved in local storage.</p>');
+        $("#lisa_kommentaar").append('<p class="Lokaalselt_salvestatud">You are offline, comment saved in local storage.</p>');
         setTimeout(function(){
-          $(".savedLocal").fadeOut("slow");
+          $(".Lokaalselt_salvestatud").fadeOut("slow");
         },5000);
       }
     }

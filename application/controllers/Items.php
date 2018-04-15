@@ -24,7 +24,6 @@
 			$data['item'] = $this->item_model->get_esemed($slug);
 			$item_id = $data['item']['id'];
 			$data['comments'] = $this->comment_model->get_kommentaarid($item_id);
-            $data['added']='puudu';
 			if(empty($data['item']))
 				show_404();
 			
@@ -34,7 +33,6 @@
 			$this->form_validation->set_rules('tekst', 'Kommentaar', 'required');
 			if ($this->form_validation->run()== TRUE) {
 			    $this->comment_model->lisa_kommentaar($item_id);
-                $data['added']='olemas';
                 $data['comments'] = $this->comment_model->get_kommentaarid($item_id);
             }
         

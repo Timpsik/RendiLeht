@@ -14,7 +14,9 @@
 	</form>
 <?php endif; ?>
 <div id="googleMap1" style="width:400px;height:300px;"> 
+	<?php echo $item['aadress']; ?>
 </div>
+<?php echo "Asukoht: " . $item['aadress']; ?>
 <hr>
 <div>
 <form action="/Bank/pay" method="post">
@@ -41,7 +43,6 @@
 
 <hr>
 <h3><?php echo lang("Lisa_kommentaar");?></h3>
-<?php echo $added; ?>
 <?php echo validation_errors(); ?>
 <?php $meetod=$item['nimi'];
 echo form_open('items/'.$item['slug'],array('id'=>"kommentaari_lisamine",'method'=>'post')); ?>
