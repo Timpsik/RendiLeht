@@ -7,17 +7,17 @@
 
 <div>
 
-	<form class="form-horizontal">
+	<?php echo form_open('Esemed/otsi');?>
 		<div class="form-group">
 			<label for="otsing" hidden> Sisesta otsisõna</label>
-			<input class="form-control" id="otsing" placeholder="<?php echo lang("Sisesta_märksõna");?>" type="text">
+			<input class="form-control" id="otsing" placeholder="<?php echo lang("Sisesta_märksõna");?>" name="otsisona" type="text">
 			<br>
 		</div>
 
 		<div class="form-group">
 			<label for="kategooria" class="col-lg-2 control-label"><?php echo lang("Kategooria");?></label>
 			<div class="col-lg-10">
-				<select class="form-control" id="kategooria">
+				<select class="form-control" id="kategooria" name="kategooria">
 					<option value="Kõik"><?php echo lang("Kõik");?></option>
 					<option value="Elektroonika"><?php echo lang("Elektroonika");?></option>
 					<option value="Mängud"><?php echo lang("Mängud");?></option>
@@ -31,7 +31,7 @@
 		<div class="form-group">
 			<label for="maakond" class="col-lg-2 control-label"><?php echo lang("Maakond");?></label>
 			<div class="col-lg-10">
-				<select class="form-control" id="maakond">
+				<select class="form-control" id="maakond" name="asukoht">
 					<option value="Kõik"><?php echo lang("Kõik");?></option>
 					<option value="Harjumaa">Harjumaa</option>
 					<option value="Tartumaa">Tartumaa</option>
@@ -51,23 +51,6 @@
 				<br>
 			</div>
 		</div>
-
-
-		<div class="form-group">
-
-			<label for="alg" class="col-lg-2 control-label"><?php echo lang("Algkuupäev");?></label>
-			<div class="col-lg-2">
-				<input type="date" class="form-control" id="alg">
-				<br>
-			</div>
-			<label for="lopp" class="col-lg-2 control-label"><?php echo lang("Lõppkuupäev");?></label>
-
-			<div class="col-lg-2">
-				<input type="date" class="form-control" id="lopp">
-				<br>
-			</div>
-		</div>
-
 		<div class="form-group">
 			<button type="submit" class="btn btn-primary btn-block"><?php echo lang("Otsi");?></button>
 		</div>

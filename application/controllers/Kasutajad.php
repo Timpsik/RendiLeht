@@ -11,7 +11,7 @@
 			$this->form_validation->set_rules('eesnimi', 'Eesnimi', 'required');
 			$this->form_validation->set_rules('perenimi', 'Perenimi', 'required');
 			$this->form_validation->set_rules('email', 'Email', 'required|callback_kontrolli_emaili_leidumist');
-			$this->form_validation->set_rules('telefon', 'Parool', 'required');
+			$this->form_validation->set_rules('telefon', 'Telefon', 'required');
 			$this->form_validation->set_rules('parool', 'Parool', 'required');
 			$this->form_validation->set_rules('parool2', 'Parool2', 'matches[parool]');
 
@@ -119,7 +119,8 @@
 		}
 
 		public function konto() {
-			
+			if(!$this->session->userdata('sisselogitud'))
+				redirect('kasutajad/sisselogimine');
 			$andmed['pealkiri'] = 'Konto';
 			$andmed['sisu'] ="Vaata enda kontot puudutavat informatsiooni.";
 
@@ -129,14 +130,37 @@
 		}
 		
 		public function seaded() {
-
+            if(!$this->session->userdata('sisselogitud'))
+				redirect('kasutajad/sisselogimine');
 			$andmed['pealkiri'] = 'Seaded';
 			$andmed['sisu'] ="Vaata oma konto andmeid ja vajaduse korral muuda.";
 			$andmed['konto'] = $this->kasutaja_mudel->andmete_muutmine();
 			
-			$this->load->view('mallid/header', $andmed);
-			$this->load->view('kasutajad/seaded', $andmed);
-			$this->load->view('mallid/footer');
+			$this->form_validation->set_rules('eesnimi', 'Eesnimi', 'required');
+			$this->form_validation->set_rules('perenimi', 'Perenimi', 'required');
+			$this->form_validation->set_rules('email', 'Email', 'required');
+			$this->form_validation->set_rules('telefon', 'Telefon', 'required');
+			
+			if($this->input->post('parool') != "")
+            {
+                $this->form_validation->set_rules('parool', 'Parool', 'required');
+               $this->form_validation->set_rules('parool2', 'Confirm Password', 'required|matches[parool]');
+            }
+			if($this->form_validation->run() === FALSE){
+					$this->load->view('mallid/header', $andmed);
+		        	$this->load->view('kasutajad/seaded', $andmed);
+		        	$this->load->view('mallid/footer');
+			} 
+			else { 
+				$krüpteeritud_parool = md5($this->input->post('parool'));
+
+				$this->kasutaja_mudel->uuendamine($krüpteeritud_parool);
+				$this->session->set_flashdata('user_data_updated', 'Andmed uuendatud'); //php echo lang flashdata korral ei tööta
+				
+				redirect('kasutajad/konto');
+			}
+			
+		
 		}
 
 		public function ajalugu() {
@@ -161,6 +185,10 @@
 			$this->load->view('kasutajad/broneeringud', $andmed);
 			$this->load->view('mallid/footer');
 		}
-
+        public function kustuta() {
+            $this->kasutaja_mudel->kasutaja_kustutamine();
+            $this->session->sess_destroy();
+            redirect();
+		}
 	}
 ?>

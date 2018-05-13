@@ -32,7 +32,7 @@
 			</tr>
 			</thead>
 			<tbody>
-				<? php $i = 0;
+				<?php $i = 0;
 				$hasMoreData = 0;
 				$esemed = json_decode($esemetekogu);
 				foreach($esemed as $ese): 

@@ -6,27 +6,18 @@
 
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
-    <script async defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script async defer>window.jQuery || document.write('<script async src="<?php echo base_url(); ?>assets/js/jquery.min.js"><\/script>')</script>
-    <script async defer src="https://www.gstatic.com/charts/loader.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script async src="<?php echo base_url(); ?>assets/js/jquery.min.js"><\/script>')</script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script> 
     
-    <script async defer src="<?php echo base_url(); ?>assets/js/charts.js"></script>
-    <script async defer src="<?php echo base_url(); ?>assets/js/maps.js"></script>
-    <script async defer src="<?php echo base_url(); ?>assets/js/offline.min.js"></script>	
-    <script async defer src="<?php echo base_url(); ?>assets/js/offline.js"></script>
-    <script async defer src="<?php echo base_url(); ?>assets/js/kuulutuste_arvu_leidja.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/charts.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/kuulutuste_arvu_leidja.js"></script>
 
-    <script async defer src="//cdn.ckeditor.com/4.9.0/standard/ckeditor.js"></script>
+    <script src="//cdn.ckeditor.com/4.9.0/standard/ckeditor.js"></script>
 
 	<script>
 		var baseurl = "<?php echo base_url() ?>";
 	</script>
-    
-    
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDokQNZshQlGU0CI4ukO4yj4xpeli-S5Jc&callback=myMap"></script>
-
-
 
 </head>
 
@@ -101,11 +92,7 @@
 		<?php if($this->session->flashdata('user_loggedout')): ?>
 			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedout').'</p>'; ?>
 		<?php endif; ?>
-        
-        <?php if($this->session->flashdata('user_data_updated')): ?>
-			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_data_updated').'</p>'; ?>
-		<?php endif; ?>
-		
+
 		<?php if($this->session->flashdata('category_deleted')): ?>
 			<?php echo '<p class="alert alert-success">'.$this->session->flashdata('category_deleted').'</p>'; ?>
 		<?php endif; ?>

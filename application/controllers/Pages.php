@@ -13,9 +13,9 @@
 
 			$this->load->helper('date');
 			$this->load->model('statistika_mudel');
-			//$this->Statistika_mudel->add();
+			$this->statistika_mudel->lisa();
 			$this->session->set_userdata('page_url',  current_url());
-			$this->load->view('mallid/header', $andmed);
+			$this->load->view('mallid/avalehe_header', $andmed);
 			$this->load->view('pages/'.$page, $andmed);
 			$this->load->view('mallid/footer');
 		}

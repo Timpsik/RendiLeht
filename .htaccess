@@ -1,5 +1,83 @@
-RewriteEngine on
-RewriteCond $1 !^(index\.php|assets|images|js|css|uploads|favicon.png)
-RewriteCond %(REQUEST_FILENAME) !-f
-RewriteCond %(REQUEST_FILENAME) !-d
-RewriteRule ^(.*)$ ./index.php/$1 [L]
+#AddHandler application/x-httpd-php5 .php
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    #RewriteBase /
+
+    #Removes access to the system folder by users.
+    #Additionally this will allow you to create a System.php controller,
+    #previously this would not have been possible.
+    #'system' can be replaced if you have renamed your system folder.
+    RewriteCond %{REQUEST_URI} ^system.*
+    RewriteRule ^(.*)$ index.php?/$1 [L]
+
+    #Checks to see if the user is attempting to access a valid file,
+    #such as an image or css document, if this isn't true it sends the
+    #request to index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?/$1 [L]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    # If we don't have mod_rewrite installed, all 404's
+    # can be sent to index.php, and everything works as normal.
+    # Submitted by: ElliotHaughin
+
+    ErrorDocument 404 index.php
+</IfModule>
+
+php_flag short_open_tag on
+
+ExpiresActive On
+
+ExpiresDefault A0
+
+
+
+# Set up caching on media files for 1 year (forever?)
+
+<FilesMatch "\.(flv|ico|pdf|avi|mov|ppt|doc|mp3|wmv|wav|js|css)$">
+
+ExpiresDefault A29030400
+
+Header append Cache-Control "public"
+
+</FilesMatch>
+
+
+
+# Set up caching on media files for 1 week
+
+<FilesMatch "\.(gif|jpg|jpeg|png|swf)$">
+
+ExpiresDefault A604800
+
+Header append Cache-Control "public"
+
+</FilesMatch>
+
+
+
+# Set up 2 Hour caching on commonly updated files
+
+<FilesMatch "\.(xml|txt|html)$">
+
+ExpiresDefault A7200
+
+Header append Cache-Control "proxy-revalidate"
+
+</FilesMatch>
+
+
+
+# Force no caching for dynamic files
+
+<FilesMatch "\.(php|cgi|pl|htm)$">
+
+ExpiresActive Off
+
+Header set Cache-Control "private, no-cache, no-store, proxy-revalidate, no-transform"
+
+Header set Pragma "no-cache"
+
+</FilesMatch>

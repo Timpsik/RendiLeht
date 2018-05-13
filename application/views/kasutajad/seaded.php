@@ -1,5 +1,5 @@
 <?php echo form_open('kasutajad/seaded');?>
-
+<?php echo validation_errors(); ?>
   <div class="row">
 
     <div class="col-md-4 col-md-offset-4">
@@ -35,7 +35,9 @@
         <input id="parool2" type="password" class="form-control" name="parool2" placeholder=<?php echo lang("Parool");?>>
       </div>
       
-      <button type="submit" class="btn btn-primary btn-block"><?php echo lang("Registreeru");?></button>
+      <button type="submit" class="btn btn-primary btn-block"><?php echo lang("Muuda_andmeid");?></button>
     </div>
+    <?php echo form_close(); ?>
+    <a href="<?php echo base_url(); ?>kasutajad/kustuta"><?php echo lang("Kustuta_kasutaja");?></a>
   </div>
-<?php echo form_close(); ?>
+

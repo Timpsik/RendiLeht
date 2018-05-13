@@ -22,7 +22,44 @@
 				return $päring->result_array();
 			}
 
-			$this->db->join('v_hinnad', 'v_hinnad.id = v_esemed.hinna_id');
+			$this->db->join('v_hinnad', 'v_hinnad.h_id = v_esemed.hinna_id');
+			$päring = $this->db->get_where('v_esemed', array('slug' => $slug));
+			return $päring->row_array();
+		}
+		
+		public function otsitavad($slug = FALSE, $limit = FALSE, $offset = FALSE){
+
+			if($limit)
+				$this->db->limit($limit, $offset);
+			
+			if($slug === FALSE){
+				$this->db->order_by('v_esemed.id', 'DESC');
+				if($this->input->post('otsisona')!=""){
+				    
+				    $otsisone=$this->input->post('otsisona');
+				    $this->db->like('nimi', $otsisone);
+		    		$this->db->or_like('lühikirjeldus', $otsisone);
+		    		
+		    		$this->db->join('v_kategooriad', 'v_kategooriad.id = v_esemed.kategooria_id');
+		    		if($this->input->post('kategooria')!="Kõik"){
+		    		    $soovitavCat=$this->input->post('kategooria');
+		    		    $this->db->where('kategooria', $soovitavCat);
+		    		}
+		    		if($this->input->post('asukoht')!="Kõik"){
+		    		    $soovitavLoc=$this->input->post('asukoht');
+		    		    $this->db->where('maakond', $soovitavLoc);
+		    		}
+			    	$päring = $this->db->get('v_esemed');
+			    	return $päring->result_array();
+				} else {
+				    $this->db->join('v_kategooriad', 'v_kategooriad.id = v_esemed.kategooria_id');
+				    $päring = $this->db->get('v_esemed');
+			    	return $päring->result_array();
+				}
+				
+			}
+
+			$this->db->join('v_hinnad', 'v_hinnad.h_id = v_esemed.hinna_id');
 			$päring = $this->db->get_where('v_esemed', array('slug' => $slug));
 			return $päring->row_array();
 		}
@@ -45,13 +82,13 @@
 				$nädal = $this->input->post('nädal');
 				$kuu = $this->input->post('kuu');
 				
-            $päring = $this->db->päring("CALL lisa_ese('$nimi','$slug','$lyhikirjeldus', '$kirjeldus', '$maakond', '$aadress', '$kategooria_id', '$item_image', '$kasutaja_id', '$tund' , '$päev', '$nädal', '$kuu')");
+            $päring = $this->db->query("CALL lisa_ese('$nimi','$slug','$lyhikirjeldus', '$kirjeldus', '$maakond', '$aadress', '$kategooria_id', '$item_image', '$kasutaja_id', '$tund' , '$päev', '$nädal', '$kuu')");
 
 		}
 
 		public function kustuta_ese($id){
 
-			$päring = $this->db->päring("CALL kustuta_ese($id)");
+			$päring = $this->db->query("CALL kustuta_ese($id)");
 
 			return true;
 		}
@@ -90,7 +127,7 @@
 		public function get_kuulutuste_arv(){
 
 			$päring = $this->db->get('v_kuulutuste_arv');
-
-			return $päring->result_array();
+			$tulemus = $päring->row();
+			return $tulemus->arv;
 		}
 	}

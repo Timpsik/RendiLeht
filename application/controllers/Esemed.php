@@ -19,8 +19,26 @@
 			$this->load->view('esemed/indeks', $andmed);
 			$this->load->view('mallid/footer');
 		}
+        public function otsi($offset=0){
 
+			
+			$konfiguratsioon['base_url'] = base_url() . 'esemed/indeks/';
+			$konfiguratsioon['total_rows'] = $this->db->count_all('esemed');
+			$konfiguratsioon['per_page'] = 3;
+			$konfiguratsioon['uri_segment'] = 3;
+			$konfiguratsioon['attributes'] = array('class' => 'pagination-link');
 
+			$this->pagination->initialize($konfiguratsioon);
+			$this->session->set_userdata('page_url',  current_url());
+			$andmed['pealkiri'] = 'Otsing';
+			$andmed['sisu'] = 'Otsingule vastavad esemed';
+			$andmed['esemed'] = $this->eseme_mudel->otsitavad(FALSE, $konfiguratsioon['per_page'], $offset);
+		
+			$this->load->view('mallid/header',$andmed);
+			$this->load->view('esemed/indeks', $andmed);
+			$this->load->view('mallid/footer');
+		}
+        
 
 		public function vaata($slug = NULL){
 
@@ -86,7 +104,17 @@
 					$andmed = array('upload_data' => $this->upload->data());
 					$item_image = $_FILES['userfile']['name'];
 				}
-
+                $config['image_library'] = 'gd2';  
+                     $config['source_image'] = './upload/'.$item_image;  
+                     $config['create_thumb'] = FALSE;  
+                     $config['maintain_ratio'] = FALSE;  
+                     $config['quality'] = '60%';  
+                     $config['width'] = 200;  
+                     $config['height'] = 200;  
+                     $config['new_image'] = './upload/'.$item_image;  
+                     $this->load->library('image_lib', $config);  
+                     $this->image_lib->resize();
+                     
 				$this->eseme_mudel->lisa_ese($item_image);
 				$this->session->set_flashdata('item_created', 'Eseme lisamine õnnestus');
 

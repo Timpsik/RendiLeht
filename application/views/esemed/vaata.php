@@ -1,8 +1,8 @@
 <script>
 var aadress = "<?php echo $aadress; ?>";
 </script>
-<script src="<?php echo base_url(); ?>assets/js/laeRohkemKommentaare.js"></script>
-<script type='text/javascript'>var php_KUVATUDKOMMENTAARE = <? echo KUVATUDKOMMENTAARE ?></script>
+<script async defer src="<?php echo base_url(); ?>assets/js/laeRohkemKommentaare.js"></script>
+<script type='text/javascript'>var php_KUVATUDKOMMENTAARE = <?php echo KUVATUDKOMMENTAARE ?></script>
 <body>
 <small class="item-date"><?php echo lang("Lisamise_aeg");?> <?php echo $ese['lisamise_aeg']; ?></small>
 <br>

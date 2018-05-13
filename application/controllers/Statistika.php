@@ -14,7 +14,7 @@
 			$andmed['pealkiri'] = "Statistika";
 			$andmed['sisu'] ="Meie avalehe külastajate põhjal koostatud statistika";
 
-			$this->load->view('mallid/header', $andmed);
+    		$this->load->view('mallid/header', $andmed);
 			$this->load->view('statistika/vaata', $andmed);
 			$this->load->view('mallid/footer');
         }

@@ -28,7 +28,6 @@
 		
 	</script>
 
-}
 </div>  
 
 <div class="form-group"><label><?php echo lang("Lisa_pilt");?></label>	<input type="file" name="userfile" size="20"></div>

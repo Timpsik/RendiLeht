@@ -88,6 +88,7 @@ $lang['Renditavad_esemed'] = 'Viimati lisatud esemed';
 $lang['Lisa_kuulutus'] = 'Lisa kuulutus';
 $lang['Ava_kuulutus'] = 'Ava kuulutus';
 $lang['Konto'] = 'Konto';
+$lang['Kustuta_kasutaja'] = 'Kustuta kasutaja';
 
 $lang['Stats_riik'] = 'Külastajad riigiti';
 $lang['Stats_brauser'] = 'Külastajate brauserid';

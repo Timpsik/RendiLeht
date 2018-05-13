@@ -93,6 +93,7 @@ $lang['Ava_kuulutus'] = 'Open advert';
 $lang['Konto'] = 'Account';
 $lang['Osta'] = 'Buy';
 $lang['Minu_esmed'] = 'My items';
+$lang['Kustuta_kasutaja'] = 'Delete user';
 
 $lang['PankÕnnestus'] = 'Payment was successful';
 $lang['PankEbannestus'] = 'Payment failed';

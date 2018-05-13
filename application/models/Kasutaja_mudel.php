@@ -53,5 +53,19 @@
 			else 
 				return false;			
 		}
+        public function kasutaja_kustutamine(){
+            $id=$this->session->userdata('kasutaja_id');
+            $this->db->query("CALL kustuta_kasutaja('$id')");
+        }
+        
+        public function uuendamine($krüpteeritud_parool){
+            $id = $this->session->userdata('kasutaja_id');
+			$eesnimi = $this->input->post('eesnimi');
+			$perenimi = $this->input->post('perenimi');
+			$email = $this->input->post('email');
+			$telefon = $this->input->post('telefon');
+			$parool = $krüpteeritud_parool;
 
+			$päring = $this->db->query("CALL uuenda_kasutaja('$id','$eesnimi','$perenimi','$email', '$telefon', '$parool')");
+		}
 	}
