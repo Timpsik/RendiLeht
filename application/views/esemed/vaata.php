@@ -3,19 +3,12 @@ var aadress = "<?php echo $aadress; ?>";
 </script>
 <script async defer src="<?php echo base_url(); ?>assets/js/laeRohkemKommentaare.js"></script>
 <script type='text/javascript'>var php_KUVATUDKOMMENTAARE = <?php echo KUVATUDKOMMENTAARE ?></script>
-<body>
 <small class="item-date"><?php echo lang("Lisamise_aeg");?> <?php echo $ese['lisamise_aeg']; ?></small>
 <br>
 <a id="show_image">Ava või sulge pilt</a><br>
-<img img id="my_images" src="<?php echo site_url(); ?>assets/images/esemed/<?php echo $ese['item_image']; ?> " alt="Kuulutust illustreeriv pilt">
+<img id="my_images" src="<?php echo site_url(); ?>assets/images/esemed/<?php echo $ese['item_image']; ?> " alt="Kuulutust illustreeriv pilt">
 
-<script>
-   $(document).ready(function(){
-      $('#show_image').on("click", function(){
-         $('#my_images').toggle();
-      });
-   });
-</script>
+
 <div class="item-body">
 	<?php echo $ese['kirjeldus']; ?>
 </div>
@@ -46,6 +39,7 @@ var aadress = "<?php echo $aadress; ?>";
 		<input type="submit" value=<?php echo lang("Osta");?>>
   
 </form>
+</div>
 	<h3><?php echo lang("Kommentaarid");?></h3>
 
 	<?php if($kommentaarid) : ?>

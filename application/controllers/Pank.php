@@ -1,7 +1,7 @@
 <?php
 	class Pank extends CI_Controller{
 
-		public function pay(){
+		public function maksa(){
 			
 			if(!$this->session->userdata('sisselogitud'))
 				redirect('kasutajad/sisselogimine');

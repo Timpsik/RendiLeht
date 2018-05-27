@@ -1,0 +1,1 @@
+function addmsg(msg){$("#total").html(msg)}function waitForMsg(){$.ajax({type:"GET",url:"/esemed/kuulutuste_arv",async:!0,cache:!1,timeout:5e4,success:function(data){addmsg(data),setTimeout(waitForMsg,5e3)},error:function(XMLHttpRequest,textStatus,errorThrown){addmsg(textStatus+" ("+errorThrown+")"),setTimeout(waitForMsg,15e3)}})}$(document).ready(function(){waitForMsg()});

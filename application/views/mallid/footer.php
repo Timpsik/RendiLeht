@@ -3,5 +3,6 @@
     <p  class="footer text-left">Rendiks pakutavaid esemeid kokku: <span id="total"></span></p>
 </div>
 		</div>
+
 	</body>
 </html>

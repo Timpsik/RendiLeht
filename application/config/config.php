@@ -61,7 +61,7 @@ $config['cookie_httponly'] 	= FALSE;
 
 $config['standardize_newlines'] = FALSE;
 
-$config['global_xss_filtering'] = FALSE;
+$config['global_xss_filtering'] = TRUE;
 
 $config['csrf_protection'] = FALSE;
 $config['csrf_token_name'] = 'csrf_test_name';
